@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hikemandu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<script>
+    window.onload = function() {
+        let userResponse = confirm("Voli Hike Jane Haina ta!?");
+        if (userResponse) {
+            alert("Let's go 🚶‍♂️‍➡️🏃‍♂️‍➡️");
+        } else {
+            alert("Na Gaye Yetrai Shiit😏😏");
+            alert("Jau na Jau Majja Aauxa😂😂");
+        }
+    };
+</script>
+
+
+<body>
+    <header>
+        <p class="quote">"Step into nature's embrace with Hikemandu"</p>
+        <h3 class="glow-text">Welcome to Hiking Adventures</h1>
+            <h1 class="styled-text">Let's Explore Together</h1>
+
+
+        <nav>
+            <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+
+                <ul class="nav-menu">
+                    <li><a href="hiking.html" class="nav-link"><button class="nav-button">Home</button></a></li>
+                    <li><a href="#trails" class="nav-link"><button class="nav-button">Trails</button></a></li>
+                    <li><a href="event.html" class="nav-link"><button class="nav-button">Upcoming Event</button></a></li>
+                    <li><a href="gallery.html" class="nav-link"><button class="nav-button">Gallery</button></a></li>
+                    <li><a href="#travel" class="nav-link"><button class="nav-button">Travel ogether</button></a></li>
+                    <li><a href="#trails" class="nav-link"><button class="nav-button">Travel Guide</button></a></li>
+                    <li><a href="#trails" class="nav-link"><button class="nav-button">Holiday Plan</button></a></li>
+                    <li><a href="#contact" class="nav-link"><button class="nav-button">Contact</button></a></li>
+                    <li><a href="#about" class="nav-link"><button class="nav-button">About us</button></a></li>
+                </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h2>Discover the Best Hiking Trails</h2>
+            <p>Join us on an adventure to explore the most beautiful hiking trails around the Kathmandu Valley.</p>
+            
+        </section>
+        <section id="trails">
+            <h2>Our Trails</h2>
+            <li><a href="trail.html" style="color: aqua; text-decoration: none;" onmouseover="this.style.color='lightgreen'" onmouseout="this.style.color='yellowgreen'"><strong style="font-size: 17px; color: coral;">Join</strong> with us for upcomming hike.</a></li>
+            <li><a href="trails.html" style="color: aqua; text-decoration: none;" onmouseover="this.style.color='lightgreen'" onmouseout="this.style.color='yellowgreen'"><strong style="font-size: 17px; color: coral;">Explore</strong> our curated list of hiking trails suitable for all levels of hikers.</a></li>
+        </section>
+        <section id="gallery">
+            <h2>Gallery</h2>
+            <li><a href="gallery.html" style="color: aqua; text-decoration: none;" onmouseover="this.style.color='lightgreen'" onmouseout="this.style.color='yellowgreen'"><strong style="font-size: 17px; color: coral;">Check</strong> out some amazing photos from our recent hikes.</a></li>
+        </section>
+        
+        <section id="testimonials" class="testimonial-section">
+            <h2>What Our Hikers Say</h2>
+            <div class="testimonial">
+                <p>"The trails were beautiful and the experience was unforgettable!"<span><strong style="font-size: 17px; color: coral;"> - Aayush Poudel</strong></span></p>
+                
+            </div>
+            <div class="testimonial">
+                <p>"A fantastic adventure, great company, and incredible views!" <span><strong style="font-size: 17px; color: coral;"> - Dhurba Regmi</strong></span></p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </div>
+
+            <h2>Contact Us</h2>
+            <p>Get in touch with us for more information or to join our next hiking adventure.</p>
+            <p>Phone No.: 9813092717, Email: pratikshiwakoti105@gmail.com</p>
+        </section>
+
+        
+    </main>
+    <footer>
+        <p>&copy; 2025 Hikemandu. All rights reserved.</p>
+        <p>Follow us on 
+            <a href="https://facebook.com" target="_blank">Facebook</a>, 
+            <a href="https://instagram.com" target="_blank">Instagram</a>, 
+            <a href="https://twitter.com" target="_blank">Twitter</a>.
+        </p>
+        <p class="marquee">Designed By Pratik Shiwakoti</p>
+    </footer>
+</body>
+</html>

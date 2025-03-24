@@ -1,0 +1,139 @@
+/* Basic Styles for Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Header Styles */
+header {
+    background-image: url('gallery background.png');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+header .quote {
+    font-size: 18px;
+    font-style: italic;
+}
+
+header .glow-text {
+    font-size: 36px;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+}
+
+header .styled-text {
+    font-size: 48px;
+    color: #FFFF00;
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 10px;
+}
+
+.nav-btn {
+    background-color: yellowgreen;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.nav-btn:hover {
+    background-color: limegreen;
+    transition: background-color 0.3s ease;
+}
+
+/* Main Section Styles */
+main {
+    padding: 20px;
+}
+
+h2 {
+    font-size: 28px;
+    color: #333;
+}
+
+ul {
+    padding: 0;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+/* Testimonial Section */
+.testimonial-section {
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.testimonial {
+    margin: 20px;
+    font-style: italic;
+}
+
+.testimonial h4 {
+    font-size: 18px;
+    color: coral;
+}
+
+/* Contact Form Styles */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: yellowgreen;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: limegreen;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer a {
+    color: lightgreen;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: white;
+}

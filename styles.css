@@ -1,0 +1,204 @@
+body {
+    background: url('hiking.jpg') no-repeat center center/cover;
+    margin: 0;
+    padding: 0;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+header {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+}
+p.quote {
+    font-size: 1em;
+    color: #00ffff;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 0px 0px 10px rgb(255, 242, 0);
+}   
+h1 {
+    margin-bottom: 3px; /* Reduce space below the heading */
+}
+
+h2 {
+    margin-top: 3px; /* Reduce space above the second line */
+}
+
+
+.styled-text {
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: inherit;
+    background: linear-gradient(45deg, #ff5733, #ffbd33, #33ff57);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+.glow-text {
+    font-size: 38px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    text-shadow: 0 0 10px #ff5733, 0 0 20px #ffbd33, 0 0 30px #33ff57;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #ff5733, 0 0 20px #ffbd33, 0 0 30px #33ff57;
+    }
+    100% {
+        text-shadow: 0 0 20px #ffbd33, 0 0 30px #33ff57, 0 0 40px #ff5733;
+    }
+}
+/* Hamburger Menu Icon */
+.menu-icon {
+    font-size: 28px;
+    cursor: pointer;
+    position: absolute;
+    left: 20px;
+}
+
+/* Responsive: Hide menu for smaller screens */
+@media screen and (max-width: 768px) {
+    .nav-menu {
+        display: none; /* Hide menu initially */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        border-top: 1px solid #ddd;
+    }
+
+    .nav-menu.active {
+        display: flex; /* Show menu when active */
+    }
+
+    .nav-menu li {
+        padding: 10px 0;
+    }
+}
+
+/* Styling for navigation links */
+.nav-link {
+    color: yellowgreen;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: lightgreen;
+}
+
+
+/* Styling for buttons */
+.nav-button {
+    background-color: yellowgreen;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.nav-button:hover {
+    background-color: lightgreen;
+}
+
+/* Styling for the navigation menu */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    gap: 50px;
+    padding: 100;
+}
+
+
+
+
+
+nav ul li a {
+    color: yellow(255, 255, 255);
+    text-decoration: none;
+}
+main {
+    padding: 50px;
+}
+section {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+}
+footer {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    position: relative;
+    overflow: hidden;
+}
+.marquee {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 15s linear infinite;
+}
+@keyframes marquee {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(100%); }
+}
+.testimonial-section {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.testimonial {
+    margin: 20px;
+    font-style: italic;
+}
+
+.testimonial h4 {
+    font-size: 18px;
+    color: coral;
+}
+/* Contact Form Styles */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: yellowgreen;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: limegreen;
+}

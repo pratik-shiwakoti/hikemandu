@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event - Hikemandu</title>
+    <link rel="stylesheet" href="event.css">
+</head>
+<body>
+<section id="event" class="upcoming-event-section">
+    <div class="event-content">
+        <p class="event-description">
+            Join us for an unforgettable adventure! Our next event is filled with exciting activities, great company, and stunning views. Don't miss out!
+        </p>
+        <h2 class="event-title">Upcoming Event</h2>
+
+        <p id="countdown" class="countdown-text"></p>
+
+        <script src="script.js"></script> <!-- Link to external JS -->
+
+        <p class="event-info"> *Saga - Aashapuri - Doleshwor - Suryabinayak Hike*</p>
+        
+        <button class="event-button" onclick="openPopup()">Learn More</button>
+        <button class="register-button" onclick="">Register Here</button>
+        
+    </div>
+</section>
+<!-- Popup Modal -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <h2>Event Details</h2>
+        <p>Get ready for the most thrilling event of the year! We're hosting a special event with lots of exciting activities like hiking, group adventures, and live music. It's a perfect day out with friends, family, and nature lovers. Don't miss the chance to connect with other adventurers!</p>
+        <p><strong>Date:</strong> 16 Chaitra 2081</p>
+        <p><strong>Time:</strong> 9:00 AM</p>
+        <p><strong>Starting Location:</strong> Kailashnath Mahadev Statue, Suryabinayak-8 Saga, Bhaktapur</p>
+    </div>
+</div>
+
+<script>
+    // Function to open the popup
+    function openPopup() {
+        document.getElementById("popup").style.display = 'block';
+    }
+
+    // Function to close the popup
+    function closePopup() {
+        document.getElementById("popup").style.display = 'none';
+    }
+</script>
+</body>
+</html>
