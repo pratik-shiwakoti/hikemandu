@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hikemandu - Adventure & Reliability</title>
+    <title>Hikemandu - You Explore. We Guide.</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="search.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,51 +16,156 @@
         <div class="container">
             <div class="logo">
                 <a href="index.html">
-                    <img src="logo.JPG" alt="Hikemandu Logo">
+                    <img src="HIKEMANDU.svg" alt="Hikemandu Logo">
                 </a>
             </div>
             <nav>
-                <ul class="nav-links">
+                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#kathmandu-hikes">Kathmandu Hikes</a></li>
-                    <li><a href="#destinations">Popular Treks</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#about">About</a></li>
+                    
+                    <!-- Valley Hikes Dropdown -->
+                    <li class="dropdown">
+                        <a href="#kathmandu-hikes" class="dropdown-toggle">
+                            Valley Hikes <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="kathmandu.html">Kathmandu</a></li>
+                            <li><a href="lalitpur.html">Lalitpur</a></li>
+                            <li><a href="bhaktapur.html">Bhaktapur</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a href="trails/champadevi.html">Champadevi Hill</a></li>
+                            <li><a href="trails/nagarjun.html">Nagarjun Forest</a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Destinations Dropdown -->
+                    <li class="dropdown">
+                        <a href="#destinations" class="dropdown-toggle">
+                            Destinations <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="all_hike.html">Hiking Trails</a></li>
+                            <li><a href="#destinations">Popular Treks</a></li>
+                            <li><a href="picnic.html">Picnic Spots</a></li>
+                            <li><a href="bike-tours.html">Bike Ride</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a href="everest.html">Everest Base Camp</a></li>
+                            <li><a href="annapurna.html">Annapurna Circuit</a></li>
+                            <li><a href="langtang.html">Langtang Valley</a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Gallery Dropdown -->
+                    <li class="dropdown">
+                        <a href="#gallery" class="dropdown-toggle">
+                            Gallery <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="galleries.html">Trail Photos</a></li>
+                            <li><a href="gallery.html#landscapes">Landscapes</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a href="gallery.html#events">Event Photos</a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Services Dropdown -->
+                    <li class="dropdown">
+                        <a href="#services" class="dropdown-toggle">
+                            Services <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="guided-tour.html">Guided Tours</a></li>
+                            <li><a href="equipment-rental.html">Equipment Rental</a></li>
+                            <li><a href="enquries.html">Enquiry</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a href="services/custom-packages.html">Custom Packages</a></li>
+                            <li><a href="services/group-bookings.html">Group Bookings</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="#faq">FAQ</a></li>
+                    
+                    <!-- About Us Dropdown -->
+                    <li class="dropdown">
+                        <a href="#about" class="dropdown-toggle">
+                            About Us <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#about">Our Story</a></li>
+                            <li><a href="about/team.html">Our Team</a></li>
+                            <li><a href="about/mission.html">Mission & Vision</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a href="#testimonials">Testimonials</a></li>
+                            <li><a href="terms.html">Terms and Conditions</a></li>
+                        </ul>
+                    </li>
+                    
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <button class="book-btn">Book a Trek</button>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
+                
+                <div class="search-container">
+                    <button class="search-btn" title="Search (Ctrl+K) - Advanced search with text area and detailed queries" aria-label="Open advanced search">
+                        <i class="fas fa-search"></i>
+                    </button>
                 </div>
-            </nav>
-        </div>
+
+            <div class="theme-toggle-wrapper">
+  <input type="checkbox" id="theme-toggle" class="theme-toggle">
+  <label for="theme-toggle" class="theme-toggle-label">
+    <div class="theme-toggle-thumb"></div>
+    <div class="theme-toggle-icons">
+      <i class="fas fa-sun sun"></i>
+      <i class="fas fa-moon moon"></i>
+    </div>
+  </label>
+</div>
+
+    <button class="book-btn">Book a Trek</button>
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+    </nav>
+    </div>
     </header>
 
     <section id="home" class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <p class="hero-tagline">ADVENTURE & RELIABILITY</p>
+            <p class="hero-tagline">You Explore. We Guide.</p>
             <h1>Explore Nepal's Majestic Trails</h1>
             <p>Discover breathtaking views and unforgettable adventures with Hikemandu</p>
             <div class="hero-buttons">
-                <a href="#kathmandu-hikes" class="btn primary-btn">Explore Kathmandu Hikes</a>
+                <a href="#kathmandu-hikes" class="btn primary-btn">Explore Kathmandu valley Hikes</a>
                 <a href="#contact" class="btn secondary-btn">Plan Your Trek</a>
             </div>
         </div>
     </section>
 
-<!-- Add this section to your index.html page, ideally after the hero section -->
+    <!-- Advertisement Banner 1 -->
+    <section class="ad-banner ad-banner-1">
+        <div class="container">
+            <div class="ad-content">
+                <div class="ad-placeholder">
+                    <i class="fas fa-ad"></i>
+                    <p>Advertisement Space</p>
+                    <p>Place your Advertisement here. Contact: 9813092717</p>
+                    <span>1500x90 Banner</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
 <section class="upcoming-event-banner">
     <div class="container">
         <div class="event-banner-content">
             <div class="event-banner-info">
                 <h2>Upcoming Event</h2>
-                <h3>Banepa - Chandeshwori Temple Hike</h3>
+                <h3>Chandeshwori Temple - Banepa - Sanga Hike</h3>
                 <p>Join us for an unforgettable adventure through beautiful trails, ancient temples, and stunning viewpoints.</p>
                 <div class="event-banner-meta">
-                    <span><i class="fas fa-calendar"></i> April 19, 2025</span>
+                    <span><i class="fas fa-calendar"></i> October 19, 2025</span>
                     <span><i class="fas fa-clock"></i> 10:00 AM</span>
                     <span><i class="fas fa-map-marker-alt"></i> KU Bus Stop, Dhulikhel</span>
                 </div>
@@ -77,7 +183,7 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-subtitle">LOCAL ADVENTURES</span>
-                <h2>Hikes Near Kathmandu</h2>
+                <h2>Hikes Near Kathmandu Valley</h2>
                 <p>Explore the beautiful trails around Kathmandu Valley, perfect for day hikes and weekend getaways</p>
             </div>
             
@@ -120,13 +226,24 @@
                         <a href="nagarkot.html" class="btn primary-btn">View Trail</a>
                     </div>
                 </div>
-                
+                <!-- Advertisement Card -->
+                <div class="ad-card">
+                    <div class="ad-content-card">
+                        <div class="ad-placeholder">
+                            <i class="fas fa-ad"></i>
+                            <p>Sponsored Content</p>
+                            <p>Place your Content here. Contact: 9813092717</p>
+                            <span>300x250 Rectangle</span>
+                        </div>
+                    </div>
+                </div>
                 <div class="hike-card">
                     <div class="hike-img">
                         <img src="chandragiri.jpeg" alt="Chandragiri Hills">
                     </div>
                     <div class="hike-info">
                         <h3>Chandragiri Hills</h3>
+                        <div class="hike-badge">New</div>
                         <div class="hike-meta">
                             <span><i class="fas fa-clock"></i> 3-4 hours</span>
                             <span><i class="fas fa-mountain"></i> Moderate</span>
@@ -200,7 +317,20 @@
             </div>
             
             <div class="view-all-container">
-                <a href="#" class="btn outline-btn">View All Kathmandu Hikes <i class="fas fa-arrow-right"></i></a>
+                <a href="all_hike.html" class="btn outline-btn">View All Hikes Near Kathmandu<i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advertisement Banner 2 -->
+    <section class="ad-banner ad-banner-2">
+        <div class="container">
+            <div class="ad-content">
+                <div class="ad-placeholder">
+                    <i class="fas fa-ad"></i>
+                    <p>Advertisement Space</p>
+                    <span>728x90 Banner</span>
+                </div>
             </div>
         </div>
     </section>
@@ -225,7 +355,7 @@
             <div class="destination-grid">
                 <div class="destination-card">
                     <div class="destination-img">
-                        <img src="https://source.unsplash.com/random/600x400/?mountains,everest" alt="Everest Base Camp">
+                        <img src="everest base camp.jpg" alt="Everest Base Camp">
                     </div>
                     <div class="destination-info">
                         <h3>Everest Base Camp</h3>
@@ -234,12 +364,25 @@
                             <p><i class="fas fa-calendar-alt"></i> 14 days</p>
                             <p><i class="fas fa-mountain"></i> Difficulty: Challenging</p>
                         </div>
-                        <a href="#" class="btn primary-btn">View Details</a>
+                        <a href="everest.html" class="btn primary-btn">View Details</a>
                     </div>
                 </div>
+
+                <!-- Sidebar Ad -->
+                <div class="ad-sidebar">
+                    <div class="ad-content-sidebar">
+                        <div class="ad-placeholder">
+                            <i class="fas fa-ad"></i>
+                            <p>Sidebar Ad</p>
+                            <p>Place your Advertisement here. Contact: 9813092717</p>
+                            <span>300x400 Skyscraper</span>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="destination-card">
                     <div class="destination-img">
-                        <img src="https://source.unsplash.com/random/600x400/?mountains,annapurna" alt="Annapurna Circuit">
+                        <img src="Annapurna Circuit.jpg" alt="Annapurna Circuit">
                     </div>
                     <div class="destination-info">
                         <h3>Annapurna Circuit</h3>
@@ -248,12 +391,12 @@
                             <p><i class="fas fa-calendar-alt"></i> 12-18 days</p>
                             <p><i class="fas fa-mountain"></i> Difficulty: Moderate to Challenging</p>
                         </div>
-                        <a href="#" class="btn primary-btn">View Details</a>
+                        <a href="annapurna.html" class="btn primary-btn">View Details</a>
                     </div>
                 </div>
                 <div class="destination-card">
                     <div class="destination-img">
-                        <img src="https://source.unsplash.com/random/600x400/?mountains,langtang" alt="Langtang Valley">
+                        <img src="Langtang Valley.jpg" alt="Langtang Valley">
                     </div>
                     <div class="destination-info">
                         <h3>Langtang Valley</h3>
@@ -262,7 +405,7 @@
                             <p><i class="fas fa-calendar-alt"></i> 7 days</p>
                             <p><i class="fas fa-mountain"></i> Difficulty: Moderate</p>
                         </div>
-                        <a href="#" class="btn primary-btn">View Details</a>
+                        <a href="langtang.html" class="btn primary-btn">View Details</a>
                     </div>
                 </div>
             </div>
@@ -273,7 +416,7 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-subtitle">PHOTO GALLERY</span>
-                <h2>Our Trekking Gallery</h2>
+                <h2>Our Gallery</h2>
                 <p>Explore breathtaking views from Nepal's most beautiful trekking routes captured by our team</p>
             </div>
             <div class="gallery-filter">
@@ -433,10 +576,10 @@
                     </div>
                     <div class="testimonial-author">
                         <div class="author-avatar">
-                            <img src="https://source.unsplash.com/random/100x100/?portrait,woman" alt="Srijana Thapa">
+                            <img src="samip.jpg" alt="Samip Pandey">
                         </div>
                         <div class="author-info">
-                            <h4>Srijana Thapa</h4>
+                            <h4>Samip Pandey</h4>
                             <p>Regular Hiker</p>
                         </div>
                     </div>
@@ -451,6 +594,130 @@
         </div>
     </section>
 
+ <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">FREQUENTLY ASKED</span>
+                <h2>Questions & Answers</h2>
+                <p>Find answers to common questions about hiking with Hikemandu</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What should I bring for a day hike around Kathmandu?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>For day hikes around Kathmandu, we recommend bringing: comfortable hiking shoes, at least 2 liters of water, snacks and lunch, sun protection (hat, sunscreen, sunglasses), rain jacket, first aid kit, and your ID/passport for park entries. Don't forget your camera to capture the beautiful views!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What is the best time of year for hiking in Kathmandu Valley?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>The best time for hiking in Kathmandu Valley is during autumn (October-November) and spring (March-May). These seasons offer clear mountain views, pleasant temperatures, and stable weather. Winter (December-February) is also good but can be cold in the mornings. Avoid monsoon season (June-September) due to heavy rains and poor visibility.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do I need a guide for Kathmandu Valley hikes?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Most trails around Kathmandu Valley are well-marked and can be done independently. However, a guide can enhance your experience by providing local knowledge, cultural insights, and ensuring your safety. For first-time visitors or challenging trails like Phulchowki, we recommend hiring a guide.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How fit do I need to be for these hikes?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Fitness requirements vary by trail. Easy trails like Dhulikhel require basic fitness, while challenging ones like Phulchowki need good cardiovascular fitness. Most trails are suitable for people who can walk for 3-6 hours with breaks. We recommend starting with easier trails and gradually building up to more challenging ones.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Are there entrance fees for the hiking areas?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Some areas require entrance fees: Shivapuri National Park (NPR 100 for Nepalis, NPR 500 for foreigners), Nagarjun Forest Reserve (NPR 50 for Nepalis, NPR 200 for foreigners). Other trails like Nagarkot, Chandragiri, and Champadevi don't have entrance fees, though some may have parking charges.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I join group hikes organized by Hikemandu?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Yes! We regularly organize group hikes to various destinations around Kathmandu Valley. Check our upcoming events section or follow our social media for announcements. Group hikes are a great way to meet fellow hikers, ensure safety, and learn about local culture and nature from our experienced guides.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What safety measures should I take while hiking?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Always inform someone about your hiking plans, carry enough water and food, check weather conditions, start early to avoid afternoon heat, stay on marked trails, carry a first aid kit, and have emergency contacts saved in your phone. Consider hiring a local guide for unfamiliar trails and never hike alone in remote areas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- AI Chatbot -->
+    <div class="chatbot-container">
+        <button class="chatbot-toggle" aria-label="Open chat">
+            <i class="fas fa-comments"></i>
+        </button>
+        <div class="chatbot-window">
+            <div class="chatbot-header">
+                <h3><i class="fas fa-robot"></i> Hikemandu Assistant</h3>
+                <button class="chatbot-close" aria-label="Close chat">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chatbot-messages">
+                <div class="message bot">
+                    <p>Hello! I'm your Hikemandu assistant. I can help you with information about trails, hiking tips, weather conditions, and more. What would you like to know?</p>
+                </div>
+            </div>
+            <div class="chatbot-input-container">
+                <input type="text" class="chatbot-input" placeholder="Ask me about hiking..." maxlength="200">
+                <button class="chatbot-send" aria-label="Send message">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
     <section id="about" class="about">
         <div class="container">
             <div class="about-content">
@@ -463,23 +730,23 @@
                     
                     <div class="about-stats">
                         <div class="stat-item">
-                            <span class="stat-number">50+</span>
+                            <span class="stat-number">10+</span>
                             <span class="stat-label">Trails Explored</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-number">1000+</span>
+                            <span class="stat-number">50+</span>
                             <span class="stat-label">Happy Hikers</span>
                         </div>
                         <div class="stat-item">
                             <span class="stat-number">5</span>
-                            <span class="stat-label">Years Experience</span>
+                            <span class="stat-label">Months Experience</span>
                         </div>
                     </div>
                     
                     <a href="#" class="btn primary-btn">Learn More About Us</a>
                 </div>
                 <div class="about-image">
-                    <img src="https://source.unsplash.com/random/800x600/?hiking,team" alt="Hikemandu team members on a mountain trail">
+                    <img src="banner.jpg" alt="Hikemandu team members on a mountain trail">
                 </div>
             </div>
         </div>
@@ -520,7 +787,7 @@
                     <h3>Contact Information</h3>
                     <div class="info-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Thamel, Kathmandu, Nepal</span>
+                        <span>Suryabinayak, Bhaktapur, Nepal</span>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-phone"></i>
@@ -563,23 +830,65 @@
         <div class="container">
             <div class="footer-top">
                 <div class="footer-logo">
-                    <img src="logo.JPG" alt="Hikemandu Logo" class="footer-logo-img">
-                    
-                </div>
+  <img src="hikemandu.png" alt="Hikemandu Logo" class="footer-logo-img" onclick="openModal(this)">
+</div>
+
+<!-- Modal Structure -->
+<div id="imageModal" class="modal" onclick="this.style.display='none'">
+  <img class="modal-content" id="modalImg">
+</div>
+
                 <div class="footer-nav">
+                    
+                <div class="header-search-container">
+                    <div class="header-search-bar">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" class="header-search-input" placeholder="Search trails, destinations..." autocomplete="off">
+                        <div class="search-dropdown">
+                            <div class="search-suggestions-header">
+                                <h4>Popular Searches</h4>
+                            </div>
+                            <div class="search-suggestions-list">
+                                <div class="suggestion-item" data-query="shivapuri">
+                                    <i class="fas fa-mountain"></i>
+                                    <span>Shivapuri National Park</span>
+                                </div>
+                                <div class="suggestion-item" data-query="nagarkot sunrise">
+                                    <i class="fas fa-sun"></i>
+                                    <span>Nagarkot Sunrise Trek</span>
+                                </div>
+                                <div class="suggestion-item" data-query="chandragiri">
+                                    <i class="fas fa-mountain"></i>
+                                    <span>Chandragiri Hills</span>
+                                </div>
+                                <div class="suggestion-item" data-query="phulchowki">
+                                    <i class="fas fa-tree"></i>
+                                    <span>Phulchowki Hill</span>
+                                </div>
+                                <div class="suggestion-item" data-query="hiking tips">
+                                    <i class="fas fa-lightbulb"></i>
+                                    <span>Hiking Tips</span>
+                                </div>
+                            </div>
+                            <div class="search-results-dropdown">
+                                <!-- Dynamic search results will be populated here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#kathmandu-hikes">Kathmandu Hikes</a></li>
                         <li><a href="#destinations">Popular Treks</a></li>
                         <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#about">About</a></li>
+                        <li><a href="#about">About Us</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact">
                     <h4>Contact Us</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> Thamel, Kathmandu, Nepal</p>
+                    <p><i class="fas fa-map-marker-alt"></i>Suryabinayak, Bhaktapur, Nepal</p>
                     <p><i class="fas fa-phone"></i> +977 9813092717</p>
                     <p><i class="fas fa-envelope"></i> pratikshiwakoti105@gmail.com</p>
                 </div>
@@ -598,7 +907,7 @@
                 </div>
                 <div class="footer-links">
                     <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
+                    <a href="terms.html">Terms of Service</a>
                     <a href="#">Sitemap</a>
                 </div>
             </div>
@@ -608,6 +917,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
+    <script src="search.js" defer></script>
 </body>
 </html>
