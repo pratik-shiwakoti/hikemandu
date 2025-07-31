@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Galleries - Hikemandu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="galleries.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo.JPG-tagGC2VfWtKTZd6VSr2RNHtcWy3Foc.jpeg" alt="Hikemandu Logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#kathmandu-hikes">Kathmandu Hikes</a></li>
+                    <li><a href="upcoming-events.html">Events</a></li>
+                    <li><a href="index.html#destinations">Popular Treks</a></li>
+                    <li><a href="event-galleries.html" class="active">Galleries</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <button class="book-btn">Book a Trek</button>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-banner">
+            <div class="banner-overlay"></div>
+            <div class="container">
+                <h1>Event Photo Galleries</h1>
+                <p>Relive the memories of our past hiking adventures</p>
+            </div>
+        </section>
+
+        <section class="gallery-filter">
+            <div class="container">
+                <div class="filter-controls">
+                    <button class="filter-btn active" data-filter="all">All Events</button>
+                    <button class="filter-btn" data-filter="2025">2025</button>
+                    <button class="filter-btn" data-filter="2024">2024</button>
+                    <button class="filter-btn" data-filter="kathmandu">Kathmandu Valley</button>
+                    <button class="filter-btn" data-filter="mountain">Mountain Treks</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="event-galleries">
+            <div class="container">
+                <div class="galleries-grid">
+                    <!-- Shivapuri National Park Trek -->
+                    <div class="gallery-card" data-category="2025 kathmandu">
+                        <div class="gallery-card-image">
+                            <img src="https://source.unsplash.com/random/600x400/?hiking,nepal,forest" alt="Shivapuri National Park Trek">
+                            <div class="image-count">
+                                <i class="fas fa-camera"></i>
+                                <span>24 Photos</span>
+                            </div>
+                        </div>
+                        <div class="gallery-card-content">
+                            <h3>Shivapuri National Park Trek</h3>
+                            <div class="gallery-meta">
+                                <span><i class="fas fa-calendar"></i> April 2, 2025</span>
+                                <span><i class="fas fa-map-marker-alt"></i> Kathmandu Valley</span>
+                            </div>
+                            <p>A beautiful day hike through the lush forests of Shivapuri National Park with stunning views of the Kathmandu Valley.</p>
+                            <a href="gallery-shivapuri.html" class="btn primary-btn">View Gallery</a>
+                        </div>
+                    </div>
+
+                    <!-- Jamacho Gumba Hike -->
+                    <div class="gallery-card" data-category="2025 kathmandu">
+                        <div class="gallery-card-image">
+                            <img src="https://source.unsplash.com/random/600x400/?hiking,nepal,temple" alt="Jamacho Gumba Hike">
+                            <div class="image-count">
+                                <i class="fas fa-camera"></i>
+                                <span>18 Photos</span>
+                            </div>
+                        </div>
+                        <div class="gallery-card-content">
+                            <h3>Jamacho Gumba Hike</h3>
+                            <div class="gallery-meta">
+                                <span><i class="fas fa-calendar"></i> March 15, 2025</span>
+                                <span><i class="fas fa-map-marker-alt"></i> Nagarjun Forest</span>
+                            </div>
+                            <p>A spiritual journey to the sacred Jamacho Gumba monastery located at the top of Nagarjun hill with panoramic views.</p>
+                            <a href="gallery-jamacho.html" class="btn primary-btn">View Gallery</a>
+                        </div>
+                    </div>
+
+                    <!-- Champadevi Day Hike -->
+                    <div class="gallery-card" data-category="2025 kathmandu">
+                        <div class="gallery-card-image">
+                            <img src="https://source.unsplash.com/random/600x400/?hiking,nepal,hills" alt="Champadevi Day Hike">
+                            <div class="image-count">
+                                <i class="fas fa-camera"></i>
+                                <span>32 Photos</span>
+                            </div>
+                        </div>
+                        <div class="gallery-card-content">
+                            <h3>Champadevi Day Hike</h3>
+                            <div class="gallery-meta">
+                                <span><i class="fas fa-calendar"></i> February 28, 2025</span>
+                                <span><i class="fas fa-map-marker-alt"></i> Champadevi Hill</span>
+                            </div>
+                            <p>A moderate hike to Champadevi Hill offering spectacular views of the Kathmandu Valley and the Himalayan range.</p>
+                            <a href="gallery-champadevi.html" class="btn primary-btn">View Gallery</a>
+                        </div>
+                    </div>
+
+                    <!-- Sundarijal to Chisapani Trek -->
+                    <div class="gallery-card" data-category="2025 kathmandu">
+                        <div class="gallery-card-image">
+                            <img src="https://source.unsplash.com/random/600x400/?hiking,nepal,waterfall" alt="Sundarijal to Chisapani Trek">
+                            <div class="image-count">
+                                <i class="fas fa-camera"></i>
+                                <span>27 Photos</span>
+                            </div>
+                        </div>
+                        <div class="gallery-card-content">
+                            <h3>Sundarijal to Chisapani Trek</h3>
+                            <div class="gallery-meta">
+                                <span><i class="fas fa-calendar"></i> February 10, 2025</span>
+                                <span><i class="fas fa-map-marker-alt"></i> Shivapuri National Park</span>
+                            </div>
+                            <p>An overnight trek from Sundarijal to Chisapani through dense forests, waterfalls, and traditional villages.</p>
+                            <a href="gallery-chisapani.html" class="btn primary-btn">View Gallery</a>
+                        </div>
+                    </div>
+
+                    <!-- Nagarkot Sunrise Trek -->
+                    <div class="gallery-card" data-category="2024 kathmandu">
+                        <div class="gallery-card-image">
+                            <img src="https://source.unsplash.com/random/600x400/?sunrise,mountains,nepal" alt="Nagarkot Sunrise Trek">
+                            <div class="image-count">
+                                <i class="fas fa-camera"></i>
+                                <span>22 Photos</span>
+                            </div>
+                        </div>
+                        <div class="gallery-card-content">
+                            <h3>Nagarkot Sunrise Trek</h3>
+                            <div class="gallery-meta">
+                                <span><i class="fas fa-calendar"></i> December 15, 2024</span>
+                                <span><i class="fas fa-map-marker-alt"></i> Nagarkot</span>
+                            </div>
+                            <p>An early morning trek to witness the breathtaking sunrise over the Himalayan range from Nagarkot viewpoint.</p>
+                            <a href="gallery-nagarkot.html" class="btn primary-btn">View Gallery</a>
+                        </div>
+                    </div>
+
+                    <!-- Annapurna Base Camp Trek -->
+                    <div class="gallery-card" data-category="2024 mountain">
+                        <div class="gallery-card-image">
+                            <img src="https://source.unsplash.com/random/600x400/?annapurna,nepal" alt="Annapurna Base Camp Trek">
+                            <div class="image-count">
+                                <i class="fas fa-camera"></i>
+                                <span>45 Photos</span>
+                            </div>
+                        </div>
+                        <div class="gallery-card-content">
+                            <h3>Annapurna Base Camp Trek</h3>
+                            <div class="gallery-meta">
+                                <span><i class="fas fa-calendar"></i> November 5-15, 2024</span>
+                                <span><i class="fas fa-map-marker-alt"></i> Annapurna Region</span>
+                            </div>
+                            <p>A 10-day trek to the base of the majestic Annapurna mountain through diverse landscapes and traditional villages.</p>
+                            <a href="gallery-annapurna.html" class="btn primary-btn">View Gallery</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo.JPG-tagGC2VfWtKTZd6VSr2RNHtcWy3Foc.jpeg" alt="Hikemandu Logo" class="footer-logo-img">
+                </div>
+                <div class="footer-nav">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#kathmandu-hikes">Kathmandu Hikes</a></li>
+                        <li><a href="upcoming-events.html">Events</a></li>
+                        <li><a href="index.html#destinations">Popular Treks</a></li>
+                        <li><a href="event-galleries.html">Galleries</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Thamel, Kathmandu, Nepal</p>
+                    <p><i class="fas fa-phone"></i> +977 9813092717</p>
+                    <p><i class="fas fa-envelope"></i> pratikshiwakoti105@gmail.com</p>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Subscribe to Our Newsletter</h4>
+                    <p>Get updates on new treks and special offers</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; <span id="year"></span> Hikemandu. All rights reserved.
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+            <div class="footer-credit">
+                <p>Designed By Pratik Shiwakoti</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="event-gallery.js"></script>
+</body>
+</html>
