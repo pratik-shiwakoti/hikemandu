@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivapuri National Park Trail - Hikemandu</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../trail-details.css">
+    <link rel="stylesheet" href="../search.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    
+    <!-- Leaflet Plugins CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-fullscreen@1.0.2/dist/leaflet.fullscreen.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.79.0/dist/L.Control.Locate.min.css" />
+    
+    <!-- Ant Path Plugin for animated trails -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-ant-path@1.3.0/dist/leaflet-ant-path.css" />
+    
+    <style>
+        .trail-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/random/1920x1080/?mountains,hiking,shivapuri') no-repeat center center/cover;
+        }
+        
+        /* Star Rating Styles */
+        .star-rating {
+            display: flex;
+            flex-direction: row-reverse;
+            gap: 0.2rem;
+            font-size: 1.5rem;
+        }
+        
+        .star-rating input {
+            display: none;
+        }
+        
+        .star-rating label {
+            cursor: pointer;
+            color: #ccc;
+            transition: color 0.2s ease;
+        }
+        
+        .star-rating label:hover,
+        .star-rating label:hover ~ label,
+        .star-rating input:checked ~ label {
+            color: #FFD700;
+        }
+        
+        .star-rating label.active {
+            color: #FFD700;
+        }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=visualization"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="HIKEMANDU.svg" alt="Hikemandu Logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#kathmandu-hikes">Kathmandu Hikes</a></li>
+                    <li><a href="../index.html#destinations">Popular Treks</a></li>
+                    <li><a href="../index.html#gallery">Gallery</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                 <button class="search-btn" title="Search (Ctrl+K)">
+                    <i class="fas fa-search"></i>
+                <button class="book-btn">Book a Trek</button>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="trail-hero">
+        <div class="trail-hero-overlay"></div>
+        <div class="container">
+            <div class="trail-hero-content">
+                <div class="trail-breadcrumbs">
+                    <a href="../index.html">Home</a> / 
+                    <a href="../index.html#kathmandu-hikes">Kathmandu Hikes</a> / 
+                    <span>Shivapuri National Park</span>
+                </div>
+                <h1>Shivapuri National Park Trail</h1>
+                <div class="trail-meta">
+                    <span><i class="fas fa-clock"></i> 5-6 hours</span>
+                    <span><i class="fas fa-mountain"></i> Moderate</span>
+                    <span><i class="fas fa-route"></i> 12 km round trip</span>
+                    <span><i class="fas fa-map-marker-alt"></i> North of Kathmandu</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="trail-overview">
+        <div class="container">
+            <div class="trail-overview-grid">
+                <div class="trail-overview-content">
+                    <div class="trail-overview-header">
+                        <h2>Trail Overview</h2>
+                        <div class="trail-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span>4.5 (128 reviews)</span>
+                        </div>
+                    </div>
+                    <p>Shivapuri National Park offers one of the most accessible and rewarding day hikes from Kathmandu. Located just north of the city, this trail takes you through lush forests, past Buddhist monasteries, and up to Manichud Daha (lake), offering stunning views of the Kathmandu Valley and the Himalayan range on clear days.</p>
+                    <p>The trail is well-maintained and suitable for hikers of moderate fitness levels. Along the way, you'll encounter diverse flora and fauna, including over 300 species of birds and various wildlife such as Himalayan black bears, leopards, and rhesus monkeys.</p>
+                    
+                    <div class="trail-highlights">
+                        <h3>Trail Highlights</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Panoramic views of Kathmandu Valley</li>
+                            <li><i class="fas fa-check-circle"></i> Lush forests and diverse wildlife</li>
+                            <li><i class="fas fa-check-circle"></i> Visit to Manichud Daha (lake)</li>
+                            <li><i class="fas fa-check-circle"></i> Buddhist monasteries along the route</li>
+                            <li><i class="fas fa-check-circle"></i> Refreshing natural environment away from city pollution</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="trail-overview-sidebar">
+                    <div class="trail-info-card">
+                        <h3>Trail Information</h3>
+                        <ul>
+                            <li>
+                                <span class="info-label"><i class="fas fa-hiking"></i> Difficulty</span>
+                                <span class="info-value">Moderate</span>
+                            </li>
+                            <li>
+                                <span class="info-label"><i class="fas fa-clock"></i> Duration</span>
+                                <span class="info-value">5-6 hours</span>
+                            </li>
+                            <li>
+                                <span class="info-label"><i class="fas fa-route"></i> Distance</span>
+                                <span class="info-value">12 km round trip</span>
+                            </li>
+                            <li>
+                                <span class="info-label"><i class="fas fa-mountain"></i> Elevation Gain</span>
+                                <span class="info-value">800 meters</span>
+                            </li>
+                            <li>
+                                <span class="info-label"><i class="fas fa-calendar-alt"></i> Best Season</span>
+                                <span class="info-value">October to May</span>
+                            </li>
+                            <li>
+                                <span class="info-label"><i class="fas fa-map-marker-alt"></i> Starting Point</span>
+                                <span class="info-value">Budhanilkantha</span>
+                            </li>
+                            <li>
+                                <span class="info-label"><i class="fas fa-money-bill-wave"></i> Entrance Fee</span>
+                                <span class="info-value">NPR 100 for Nepali, NPR 500 for foreigners</span>
+                            </li>
+                        </ul>
+                        <button class="btn primary-btn book-trail-btn">Book This Trail</button>
+                    </div>
+                    
+                    <div class="weather-card">
+                        <h3><i class="fas fa-cloud-sun"></i> Current Weather</h3>
+                        <div class="weather-info" id="weather-info">
+                            <div class="weather-loading">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <p>Loading weather information...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="trail-map-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trail Map</h2>
+                <p>Explore the Shivapuri National Park trail route and key points of interest</p>
+            </div>
+            <div class="trail-map-container">
+                <div id="trail-map"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="trail-details">
+        <div class="container">
+            <div class="trail-details-grid">
+                <div class="trail-description">
+                    <h2>Detailed Trail Description</h2>
+                    
+                    <div class="trail-stage">
+                        <h3><span class="stage-number">1</span> Starting Point: Budhanilkantha</h3>
+                        <p>The trail begins at Budhanilkantha, famous for its large sleeping Vishnu statue. From here, follow the road north toward the Shivapuri National Park entrance gate. You'll need to register and pay the entrance fee at the gate.</p>
+                    </div>
+                    
+                    <div class="trail-stage">
+                        <h3><span class="stage-number">2</span> Forest Path to Nagi Gompa</h3>
+                        <p>After entering the park, the trail ascends through a beautiful forest with stone steps in many sections. After about 1.5 hours of hiking, you'll reach Nagi Gompa, a Buddhist nunnery perched on the hillside with excellent views of the valley below.</p>
+                    </div>
+                    
+                    <div class="trail-stage">
+                        <h3><span class="stage-number">3</span> Ascent to Shivapuri Peak Junction</h3>
+                        <p>From Nagi Gompa, continue ascending through the forest. The trail becomes steeper in sections but is well-maintained. After approximately 2 hours, you'll reach a junction where one path leads to Shivapuri Peak and the other to Manichud Daha.</p>
+                    </div>
+                    
+                    <div class="trail-stage">
+                        <h3><span class="stage-number">4</span> Manichud Daha (Lake)</h3>
+                        <p>Take the path toward Manichud Daha, which is about 30 minutes from the junction. The small lake is surrounded by forest and offers a peaceful spot for a rest and picnic lunch. This is a good turning point for those doing a day hike.</p>
+                    </div>
+                    
+                    <div class="trail-stage">
+                        <h3><span class="stage-number">5</span> Return Journey</h3>
+                        <p>Return via the same route, enjoying different perspectives of the forest and valley views on your descent. The downhill journey takes approximately 2-2.5 hours back to Budhanilkantha.</p>
+                    </div>
+                </div>
+                
+                <div class="trail-tips">
+                    <div class="tips-card">
+                        <h3><i class="fas fa-lightbulb"></i> Essential Tips</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Carry at least 2 liters of water per person</li>
+                            <li><i class="fas fa-check"></i> Bring snacks and a packed lunch</li>
+                            <li><i class="fas fa-check"></i> Wear comfortable hiking shoes with good grip</li>
+                            <li><i class="fas fa-check"></i> Apply sunscreen and bring a hat</li>
+                            <li><i class="fas fa-check"></i> Carry a light rain jacket (weather can change quickly)</li>
+                            <li><i class="fas fa-check"></i> Start early to avoid afternoon heat and have plenty of time</li>
+                            <li><i class="fas fa-check"></i> Bring your passport for park registration</li>
+                            <li><i class="fas fa-check"></i> Consider hiring a local guide for enhanced experience</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="what-to-bring">
+                        <h3><i class="fas fa-backpack"></i> What to Bring</h3>
+                        <div class="bring-grid">
+                            <div class="bring-item">
+                                <i class="fas fa-tint"></i>
+                                <span>Water</span>
+                            </div>
+                            <div class="bring-item">
+                                <i class="fas fa-apple-alt"></i>
+                                <span>Snacks</span>
+                            </div>
+                            <div class="bring-item">
+                                <i class="fas fa-hiking"></i>
+                                <span>Hiking Boots</span>
+                            </div>
+                            <div class="bring-item">
+                                <i class="fas fa-hat-cowboy"></i>
+                                <span>Hat</span>
+                            </div>
+                            <div class="bring-item">
+                                <i class="fas fa-sun"></i>
+                                <span>Sunscreen</span>
+                            </div>
+                            <div class="bring-item">
+                                <i class="fas fa-camera"></i>
+                                <span>Camera</span>
+                            </div>
+                            <div class="bring-item">
+                                <i class="fas fa-first-aid"></i>
+                                <span>First Aid</span>
+                            </div>
+                            <div class="bring-item">
+                                <i class="fas fa-passport"></i>
+                                <span>ID/Passport</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="trail-gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trail Gallery</h2>
+                <p>Explore the beauty of Shivapuri National Park through our photo gallery</p>
+            </div>
+            
+            <div class="trail-gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://source.unsplash.com/random/600x600/?shivapuri,forest" alt="Shivapuri Forest Trail">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Forest Trail</h3>
+                            <p>Lush green forest path</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://source.unsplash.com/random/600x600/?monastery,nepal" alt="Nagi Gompa">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Nagi Gompa</h3>
+                            <p>Buddhist nunnery on the hillside</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://source.unsplash.com/random/600x600/?kathmandu,valley,view" alt="Valley View">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Valley View</h3>
+                            <p>Panoramic view of Kathmandu Valley</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://source.unsplash.com/random/600x600/?lake,mountain" alt="Manichud Daha">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Manichud Daha</h3>
+                            <p>Serene mountain lake</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://source.unsplash.com/random/600x600/?hiking,nepal" alt="Hikers on Trail">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Hikers on Trail</h3>
+                            <p>Enjoying the Shivapuri trail</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://source.unsplash.com/random/600x600/?mountains,nepal" alt="Mountain Views">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Mountain Views</h3>
+                            <p>Himalayan peaks on a clear day</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gallery-modal">
+                <span class="close-modal">&times;</span>
+                <img class="modal-content" id="modal-img">
+                <div class="modal-caption">
+                    <h3 id="modal-title"></h3>
+                    <p id="modal-description"></p>
+                </div>
+                <a class="prev">&#10094;</a>
+                <a class="next">&#10095;</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="trail-reviews">
+        <div class="container">
+            <div class="section-header">
+                <h2>Hiker Reviews</h2>
+                <p>Read what other hikers have to say about their experience on this trail</p>
+            </div>
+            
+            <div class="reviews-summary">
+                <div class="overall-rating">
+                    <div class="rating-number">4.5</div>
+                    <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <div class="rating-count">Based on 128 reviews</div>
+                </div>
+                
+                <div class="rating-breakdown">
+                    <div class="rating-bar">
+                        <span class="rating-label">5 stars</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 65%"></div>
+                        </div>
+                        <span class="rating-percent">65%</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span class="rating-label">4 stars</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 25%"></div>
+                        </div>
+                        <span class="rating-percent">25%</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span class="rating-label">3 stars</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 7%"></div>
+                        </div>
+                        <span class="rating-percent">7%</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span class="rating-label">2 stars</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 2%"></div>
+                        </div>
+                        <span class="rating-percent">2%</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span class="rating-label">1 star</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 1%"></div>
+                        </div>
+                        <span class="rating-percent">1%</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="reviews-list">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <img src="https://source.unsplash.com/random/100x100/?portrait,man" alt="Reviewer" class="reviewer-img">
+                            <div class="reviewer-details">
+                                <h4>Rajesh Sharma</h4>
+                                <div class="review-date">Hiked on October 15, 2024</div>
+                            </div>
+                        </div>
+                        <div class="review-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>This was an amazing hike! The trail is well-maintained and the views from the top are absolutely stunning. We were lucky to have clear weather and could see the Himalayan range. The forest is beautiful and we even spotted some monkeys along the way. Highly recommend for anyone visiting Kathmandu who wants to escape the city for a day.</p>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <img src="https://source.unsplash.com/random/100x100/?portrait,woman" alt="Reviewer" class="reviewer-img">
+                            <div class="reviewer-details">
+                                <h4>Sarah Johnson</h4>
+                                <div class="review-date">Hiked on September 5, 2024</div>
+                            </div>
+                        </div>
+                        <div class="review-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>A beautiful hike with lots of nature to enjoy. The trail gets a bit steep in some places, but it's manageable for anyone with moderate fitness. The monastery along the way was a nice cultural stop. My only complaint is that the entrance fee for foreigners is quite high compared to locals, but I understand it helps maintain the park.</p>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <img src="https://source.unsplash.com/random/100x100/?portrait,man,2" alt="Reviewer" class="reviewer-img">
+                            <div class="reviewer-details">
+                                <h4>Anil Thapa</h4>
+                                <div class="review-date">Hiked on November 20, 2024</div>
+                            </div>
+                        </div>
+                        <div class="review-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>I've hiked this trail many times and it never disappoints. It's a great workout with rewarding views. The lake is peaceful and a perfect spot for lunch. In autumn, the forest colors are spectacular. If you're lucky, you might spot some interesting birds - I saw a Himalayan Monal last time! Definitely bring enough water as there aren't many places to refill along the way.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="load-more-container">
+                <button class="btn outline-btn">Load More Reviews <i class="fas fa-arrow-down"></i></button>
+            </div>
+            
+            <div class="review-form-container">
+                <h3>Share Your Experience</h3>
+                <form id="review-form" class="review-form">
+                    <div class="form-group">
+                        <label for="reviewer-name">Your Name *</label>
+                        <input type="text" id="reviewer-name" name="reviewer-name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reviewer-email">Your Email * (will not be displayed)</label>
+                        <input type="email" id="reviewer-email" name="reviewer-email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Your Rating *</label>
+                        <div class="star-rating">
+                            <input type="radio" id="star5" name="rating" value="5" required>
+                            <label for="star5"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star4" name="rating" value="4">
+                            <label for="star4"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star3" name="rating" value="3">
+                            <label for="star3"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star2" name="rating" value="2">
+                            <label for="star2"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star1" name="rating" value="1">
+                            <label for="star1"><i class="fas fa-star"></i></label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="hike-date">When did you hike this trail?</label>
+                        <input type="date" id="hike-date" name="hike-date" max="<?php echo date('Y-m-d'); ?>">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="review-text">Your Review *</label>
+                        <textarea id="review-text" name="review-text" placeholder="Share your experience, tips, or observations about this trail..." required></textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn primary-btn review-submit-btn">Submit Review</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="related-trails">
+        <div class="container">
+            <div class="section-header">
+                <h2>Similar Trails You Might Enjoy</h2>
+                <p>Explore more hiking options around Kathmandu Valley</p>
+            </div>
+            
+            <div class="related-trails-grid">
+                <div class="hike-card">
+                    <div class="hike-img">
+                        <img src="https://source.unsplash.com/random/600x400/?mountains,nagarkot" alt="Nagarkot Sunrise Trek">
+                    </div>
+                    <div class="hike-info">
+                        <h3>Nagarkot Sunrise Trek</h3>
+                        <div class="hike-meta">
+                            <span><i class="fas fa-clock"></i> 4-5 hours</span>
+                            <span><i class="fas fa-mountain"></i> Easy to Moderate</span>
+                        </div>
+                        <p>Experience breathtaking sunrise views of the Himalayas from this popular viewpoint.</p>
+                        <a href="nagarkot.html" class="btn primary-btn">View Trail</a>
+                    </div>
+                </div>
+                
+                <div class="hike-card">
+                    <div class="hike-img">
+                        <img src="https://source.unsplash.com/random/600x400/?mountains,chandragiri" alt="Chandragiri Hills">
+                    </div>
+                    <div class="hike-info">
+                        <h3>Chandragiri Hills</h3>
+                        <div class="hike-meta">
+                            <span><i class="fas fa-clock"></i> 3-4 hours</span>
+                            <span><i class="fas fa-mountain"></i> Moderate</span>
+                        </div>
+                        <p>Hike to the summit for panoramic views of Kathmandu Valley and the Himalayan range.</p>
+                        <a href="chandragiri.html" class="btn primary-btn">View Trail</a>
+                    </div>
+                </div>
+                
+                <div class="hike-card">
+                    <div class="hike-img">
+                        <img src="https://source.unsplash.com/random/600x400/?mountains,phulchowki" alt="Phulchowki Hill">
+                    </div>
+                    <div class="hike-info">
+                        <h3>Phulchowki Hill</h3>
+                        <div class="hike-meta">
+                            <span><i class="fas fa-clock"></i> 6-7 hours</span>
+                            <span><i class="fas fa-mountain"></i> Challenging</span>
+                        </div>
+                        <p>The highest hill around Kathmandu Valley, offering rich biodiversity and mountain views.</p>
+                        <a href="phulchowki.html" class="btn primary-btn">View Trail</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Experience This Trail?</h2>
+                <p>Book your guided hike to Shivapuri National Park with our experienced team</p>
+                <a href="#" class="btn primary-btn">Book Now</a>
+                <a href="../index.html#contact" class="btn secondary-btn">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="hikemandu.png" alt="Hikemandu Logo" class="footer-logo-img">
+                </div>
+                <div class="footer-nav">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#kathmandu-hikes">Kathmandu Hikes</a></li>
+                        <li><a href="../index.html#destinations">Popular Treks</a></li>
+                        <li><a href="../index.html#gallery">Gallery</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Thamel, Kathmandu, Nepal</p>
+                    <p><i class="fas fa-phone"></i> +977 9813092717</p>
+                    <p><i class="fas fa-envelope"></i> pratikshiwakoti105@gmail.com</p>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Subscribe to Our Newsletter</h4>
+                    <p>Get updates on new treks and special offers</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; <span id="year"></span> Hikemandu. All rights reserved.
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+            <div class="footer-credit">
+                <p>Designed By Pratik Shiwakoti</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet-ant-path@1.3.0/dist/leaflet-ant-path.js"></script>
+    <script src="https://unpkg.com/leaflet-fullscreen@1.0.2/dist/Leaflet.fullscreen.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.79.0/dist/L.Control.Locate.min.js"></script>
+    <script src="../script.js"></script>
+    <script src="../trail-details.js"></script>
+    <script src="search.js"></script>
+</body>
+</html>
