@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nagarkot Sunrise Trek - Hikemandu</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../trail-details.css">
+    <link rel="stylesheet" href="../search.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    
+    <!-- Leaflet Plugins CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-fullscreen@1.0.2/dist/leaflet.fullscreen.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.79.0/dist/L.Control.Locate.min.css" />
+    
+    <!-- Ant Path Plugin for animated trails -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-ant-path@1.3.0/dist/leaflet-ant-path.css" />
+    
+    <style>
+        .trail-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/random/1920x1080/?mountains,sunrise,nagarkot') no-repeat center center/cover;  
+        }
+        
+        /* Star Rating Styles */
+        .star-rating {
+            display: flex;
+            flex-direction: row-reverse;
+            gap: 0.2rem;
+            font-size: 1.5rem;
+        }
+        
+        .star-rating input {
+            display: none;
+        }
+        
+        .star-rating label {
+            cursor: pointer;
+            color: #ccc;
+            transition: color 0.2s ease;
+        }
+        
+        .star-rating label:hover,
+        .star-rating label:hover ~ label,
+        .star-rating input:checked ~ label {
+            color: #FFD700;
+        }
+        
+        .star-rating label.active {
+            color: #FFD700;
+        }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=visualization"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="HIKEMANDU.svg" alt="Hikemandu Logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#kathmandu-hikes">Kathmandu Hikes</a></li>
+                    <li><a href="../index.html#destinations">Popular Treks</a></li>
+                    <li><a href="../index.html#gallery">Gallery</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+                 <button class="search-btn" title="Search (Ctrl+K)">
+                    <i class="fas fa-search"></i>
+                <button class="book-btn">Book a Trek</button>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="trail-hero">
+        <div class="trail-hero-overlay"></div>
+        <div class="container">
+            <div class="trail-hero-content">
+                <div class="trail-breadcrumbs">
+                    <a href="../index.html">Home</a> / 
+                    <a href="../index.html#kathmandu-hikes">Kathmandu Hikes</a> / 
+                    <span>Nagarkot Sunrise Trek</span>
+                </div>
+                <h1>Nagarkot Sunrise Trek</h1>
+                <div class="trail-meta">
+                    <span><i class="fas fa-clock"></i> 4-5 hours</span>
+                    <span><i class="fas fa-mountain"></i> Easy to Moderate</span>
+                    <span><i class="fas fa-route"></i> 8 km round trip</span>
+                    <span><i class="fas fa-map-marker-alt"></i> East of Kathmandu</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="trail-overview">
+        <div class="container">
+            <div class="trail-overview-grid">
+                <div class="trail-overview-content">
+                    <div class="trail-overview-header">
+                        <h2>Trail Overview</h2>
+                        <div class="trail-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span>4.0 (96 reviews)</span>
+                        </div>
+                    </div>
+                    <p>Nagarkot is famous for its stunning sunrise views over the Himalayan range. This trek takes you through charming villages, terraced fields, and pine forests to reach the perfect viewpoint for witnessing a spectacular sunrise over the mountains.</p>
+                    <p>Located just 32 km east of Kathmandu, Nagarkot sits at an elevation of 2,175 meters and offers panoramic views of the Himalayas including Mount Everest on clear days. The trail is relatively easy and suitable for beginners, making it a perfect weekend getaway from the city.</p>
+                    
+                    <div class="trail-highlights">
+                        <h3>Trail Highlights</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Breathtaking sunrise views over the Himalayas</li>
+                            <li><i class="fas fa-check-circle"></i> Panoramic mountain vistas including Everest (on clear days)</li>
+                            <li><i class="fas fa-check-circle"></i> Traditional Tamang villages along the route</li>
+                            <li><i class="fas fa-check-circle"></i> Lush forests and terraced farmlands</li>
+                            <li><i class="fas fa-check-circle"></i> Easy accessibility from Kathmandu</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="trail-overview-sidebar">
+                    <div class="trail-info-card">
+                        <h3>Trail Information</h3>
+                        <ul>
+                            <li>
+                                <span class="info-label"><i class="fas fa-hiking"></i> Difficulty</span>
+                                <span class="info-value">Easy to Moderate</span>
+                            </li>
+                            <li>
+                                <span class="info-label"><i class="fas fa-clock"></i> Duration</span>
+                                <span class="info-value">4-5 hours</span>
+                            </li>
+                            <li>
+                                <span class="info-label"><i class="fas fa-route"></i> Distance</span>
+                                <span class="info-value">8 km round trip</span>
+                            </li>
+                            <li>
+                                <span class="info-label"><i class="fas fa-mountain"></i> Elevation Gain</span>
+                                <span class="info-value">500 meters</span>
+                            </li>
+                            <li>
+                                <span class="info-label"><i class="fas fa-calendar-alt"></i> Best Season</span>
+                                <span class="info-value">October to May</span>
+                            </li>
+                            <li>
+                                <span class="info-label"><i class="fas fa-map-marker-alt"></i> Starting Point</span>
+                                <span class="info-value">Nagarkot Bus Stop</span>
+                            </li>
+                            <li>
+                                <span class="info-label"><i class="fas fa-money-bill-wave"></i> Entrance Fee</span>
+                                <span class="info-value">None</span>
+                            </li>
+                        </ul>
+                        <button class="btn primary-btn book-trail-btn">Book This Trail</button>
+                    </div>
+                    
+                    <div class="weather-card">
+                        <h3><i class="fas fa-cloud-sun"></i> Current Weather</h3>
+                        <div class="weather-info" id="weather-info">
+                            <div class="weather-loading">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <p>Loading weather information...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="trail-map-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trail Map</h2>
+                <p>Explore the Nagarkot Sunrise Trek route and key points of interest</p>
+            </div>
+            <div class="trail-map-container">
+                <div id="trail-map"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="trail-details">
+        <div class="container">
+            <div class="trail-details-grid">
+                <div class="trail-description">
+                    <h2>Detailed Trail Description</h2>
+                    
+                    <div class="trail-stage">
+                        <h3><span class="stage-number">1</span> Starting Point: Nagarkot Bus Stop</h3>
+                        <p>The trek begins at the Nagarkot bus stop. From here, follow the main road toward the Nagarkot view tower. This is a good place to start early in the morning before sunrise.</p>
+                    </div>
+                    
+                    <div class="trail-stage">
+                        <h3><span class="stage-number">2</span> Nagarkot View Tower</h3>
+                        <p>A short walk from the bus stop brings you to the famous Nagarkot view tower, which offers 360-degree panoramic views of the Himalayas. This is an excellent spot to watch the sunrise if you're starting your trek early.</p>
+                    </div>
+                    
+                    <div class="trail-stage">
+                        <h3><span class="stage-number">3</span> Trail to Tamang Village</h3>
+                        <p>From the view tower, follow the trail that descends through pine forests. The path is well-marked and takes you through beautiful scenery. After about an hour, you'll reach a traditional Tamang village where you can experience local culture.</p>
+                    </div>
+                    
+                    <div class="trail-stage">
+                        <h3><span class="stage-number">4</span> Terraced Fields and Forest Path</h3>
+                        <p>Continue your trek through terraced fields and more forest areas. This section offers beautiful views of the surrounding countryside and distant mountains. The trail is mostly downhill or flat in this section.</p>
+                    </div>
+                    
+                    <div class="trail-stage">
+                        <h3><span class="stage-number">5</span> Return Journey</h3>
+                        <p>The return journey follows the same path back to Nagarkot, but with a steady uphill climb. Take your time and enjoy the different perspective of the landscape as you ascend. The total round trip takes about 4-5 hours at a leisurely pace.</p>
+                    </div>
+                </div>
+                
+                <div class="trail-tips">
+                    <div class="tips-card">
+                        <h3><i class="fas fa-lightbulb"></i> Essential Tips</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Start early (around 5 AM) to catch the sunrise</li>
+                            <li><i class="fas fa-check"></i> Bring warm clothes as mornings can be chilly</li>
+                            <li><i class="fas fa-check"></i> Carry at least 1 liter of water per person</li>
+                            <li><i class="fas fa-check"></i> Wear comfortable hiking shoes with good grip</li>
+                            <li><i class="fas fa-check"></i> Bring a camera for the spectacular views</li>
+                            <li><i class="fas fa-check"></i> Consider staying overnight in Nagarkot for the best sunrise experience</li>
+                            <li><i class="fas fa-check"></i> Check weather forecasts for clear viewing conditions</li>
+                            <li><i class="fas fa-check"></i> Bring some cash for refreshments in local shops</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="what-to-bring">
+                        <h3><i class="fas fa-backpack"></i> What to Bring</h3>
+                        <div class="bring-grid">
+                            <div class="bring-item">
+                                <i class="fas fa-tint"></i>
+                                <span>Water</span>
+                            </div>
+                            <div class="bring-item">
+                                <i class="fas fa-apple-alt"></i>
+                                <span>Snacks</span>
+                            </div>
+                            <div class="bring-item">
+                                <i class="fas fa-hiking"></i>
+                                <span>Hiking Boots</span>
+                            </div>
+                            <div class="bring-item">
+                                <i class="fas fa-hat-cowboy"></i>
+                                <span>Hat</span>
+                            </div>
+                            <div class="bring-item">
+                                <i class="fas fa-camera"></i>
+                                <span>Camera</span>
+                            </div>
+                            <div class="bring-item">
+                                <i class="fas fa-jacket"></i>
+                                <span>Warm Jacket</span>
+                            </div>
+                            <div class="bring-item">
+                                <i class="fas fa-money-bill"></i>
+                                <span>Cash</span>
+                            </div>
+                            <div class="bring-item">
+                                <i class="fas fa-headlamp"></i>
+                                <span>Headlamp</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="trail-gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trail Gallery</h2>
+                <p>Explore the beauty of Nagarkot Sunrise Trek through our photo gallery</p>
+            </div>
+            
+            <div class="trail-gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://source.unsplash.com/random/600x600/?sunrise,himalayas" alt="Sunrise over Himalayas">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Sunrise View</h3>
+                            <p>Spectacular sunrise over the Himalayas</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://source.unsplash.com/random/600x600/?village,nepal" alt="Tamang Village">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Tamang Village</h3>
+                            <p>Traditional village along the trail</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://source.unsplash.com/random/600x600/?terraced,fields" alt="Terraced Fields">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Terraced Fields</h3>
+                            <p>Beautiful agricultural landscapes</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://source.unsplash.com/random/600x600/?pine,forest" alt="Pine Forest">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Pine Forest</h3>
+                            <p>Serene forest path</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://source.unsplash.com/random/600x600/?nagarkot,view" alt="Nagarkot View Tower">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>View Tower</h3>
+                            <p>Panoramic views from Nagarkot tower</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://source.unsplash.com/random/600x600/?mountains,nepal" alt="Mountain Views">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Mountain Views</h3>
+                            <p>Himalayan peaks on a clear day</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gallery-modal">
+                <span class="close-modal">&times;</span>
+                <img class="modal-content" id="modal-img">
+                <div class="modal-caption">
+                    <h3 id="modal-title"></h3>
+                    <p id="modal-description"></p>
+                </div>
+                <a class="prev">&#10094;</a>
+                <a class="next">&#10095;</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="trail-reviews">
+        <div class="container">
+            <div class="section-header">
+                <h2>Hiker Reviews</h2>
+                <p>Read what other hikers have to say about their experience on this trail</p>
+            </div>
+            
+            <div class="reviews-summary">
+                <div class="overall-rating">
+                    <div class="rating-number">4.0</div>
+                    <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                    <div class="rating-count">Based on 96 reviews</div>
+                </div>
+                
+                <div class="rating-breakdown">
+                    <div class="rating-bar">
+                        <span class="rating-label">5 stars</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 45%"></div>
+                        </div>
+                        <span class="rating-percent">45%</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span class="rating-label">4 stars</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 30%"></div>
+                        </div>
+                        <span class="rating-percent">30%</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span class="rating-label">3 stars</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 15%"></div>
+                        </div>
+                        <span class="rating-percent">15%</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span class="rating-label">2 stars</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 7%"></div>
+                        </div>
+                        <span class="rating-percent">7%</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span class="rating-label">1 star</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 3%"></div>
+                        </div>
+                        <span class="rating-percent">3%</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="reviews-list">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <img src="https://source.unsplash.com/random/100x100/?portrait,woman,1" alt="Reviewer" class="reviewer-img">
+                            <div class="reviewer-details">
+                                <h4>Emily Johnson</h4>
+                                <div class="review-date">Hiked on March 15, 2025</div>
+                            </div>
+                        </div>
+                        <div class="review-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>The sunrise view from Nagarkot was absolutely breathtaking! We stayed overnight at a hotel and woke up early to catch the sunrise. The colors over the Himalayan range were spectacular. The trek itself was pleasant with beautiful scenery along the way. Highly recommend for anyone visiting Kathmandu who wants to see the mountains without a strenuous trek.</p>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <img src="https://source.unsplash.com/random/100x100/?portrait,man,1" alt="Reviewer" class="reviewer-img">
+                            <div class="reviewer-details">
+                                <h4>David Chen</h4>
+                                <div class="review-date">Hiked on February 8, 2025</div>
+                            </div>
+                        </div>
+                        <div class="review-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>The trail was nice but unfortunately it was cloudy when we visited so we couldn't see the mountains. The path is well-marked and not too difficult. The Tamang village was interesting to visit. I would recommend checking the weather forecast before planning your trip to make sure you have clear skies for the mountain views.</p>
+                    </div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <img src="https://source.unsplash.com/random/100x100/?portrait,woman,2" alt="Reviewer" class="reviewer-img">
+                            <div class="reviewer-details">
+                                <h4>Sita Tamang</h4>
+                                <div class="review-date">Hiked on January 12, 2025</div>
+                            </div>
+                        </div>
+                        <div class="review-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p>As a local, I've done this hike many times and it never disappoints. Winter is the best time for clear mountain views. The trail is easy enough for beginners but still offers beautiful scenery. Don't forget to bring a camera for the sunrise! The terraced fields along the way are also very photogenic.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="load-more-container">
+                <button class="btn outline-btn">Load More Reviews <i class="fas fa-arrow-down"></i></button>
+            </div>
+            
+            <div class="review-form-container">
+                <h3>Share Your Experience</h3>
+                <form id="review-form" class="review-form">
+                    <div class="form-group">
+                        <label for="reviewer-name">Your Name *</label>
+                        <input type="text" id="reviewer-name" name="reviewer-name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="reviewer-email">Your Email * (will not be displayed)</label>
+                        <input type="email" id="reviewer-email" name="reviewer-email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Your Rating *</label>
+                        <div class="star-rating">
+                            <input type="radio" id="star5" name="rating" value="5" required>
+                            <label for="star5"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star4" name="rating" value="4">
+                            <label for="star4"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star3" name="rating" value="3">
+                            <label for="star3"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star2" name="rating" value="2">
+                            <label for="star2"><i class="fas fa-star"></i></label>
+                            <input type="radio" id="star1" name="rating" value="1">
+                            <label for="star1"><i class="fas fa-star"></i></label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="hike-date">When did you hike this trail?</label>
+                        <input type="date" id="hike-date" name="hike-date" max="<?php echo date('Y-m-d'); ?>">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="review-text">Your Review *</label>
+                        <textarea id="review-text" name="review-text" placeholder="Share your experience, tips, or observations about this trail..." required></textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn primary-btn review-submit-btn">Submit Review</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="related-trails">
+        <div class="container">
+            <div class="section-header">
+                <h2>Similar Trails You Might Enjoy</h2>
+                <p>Explore more hiking options around Kathmandu Valley</p>
+            </div>
+            
+            <div class="related-trails-grid">
+                <div class="hike-card">
+                    <div class="hike-img">
+                        <img src="https://source.unsplash.com/random/600x400/?mountains,shivapuri" alt="Shivapuri National Park">
+                    </div>
+                    <div class="hike-info">
+                        <h3>Shivapuri National Park</h3>
+                        <div class="hike-meta">
+                            <span><i class="fas fa-clock"></i> 5-6 hours</span>
+                            <span><i class="fas fa-mountain"></i> Moderate</span>
+                        </div>
+                        <p>Explore lush forests and visit Manichud Daha, offering stunning views of the Kathmandu Valley.</p>
+                        <a href="shivapuri.html" class="btn primary-btn">View Trail</a>
+                    </div>
+                </div>
+                
+                <div class="hike-card">
+                    <div class="hike-img">
+                        <img src="https://source.unsplash.com/random/600x400/?mountains,chandragiri" alt="Chandragiri Hills">
+                    </div>
+                    <div class="hike-info">
+                        <h3>Chandragiri Hills</h3>
+                        <div class="hike-meta">
+                            <span><i class="fas fa-clock"></i> 3-4 hours</span>
+                            <span><i class="fas fa-mountain"></i> Moderate</span>
+                        </div>
+                        <p>Hike to the summit for panoramic views of Kathmandu Valley and the Himalayan range.</p>
+                        <a href="chandragiri.html" class="btn primary-btn">View Trail</a>
+                    </div>
+                </div>
+                
+                <div class="hike-card">
+                    <div class="hike-img">
+                        <img src="https://source.unsplash.com/random/600x400/?mountains,ranikot" alt="Ranikot">
+                    </div>
+                    <div class="hike-info">
+                        <h3>Ranikot, Bhaktapur</h3>
+                        <div class="hike-meta">
+                            <span><i class="fas fa-clock"></i> 4-5 hours</span>
+                            <span><i class="fas fa-mountain"></i> Easy</span>
+                        </div>
+                        <p>A historical fort with beautiful surroundings and cultural significance.</p>
+                        <a href="ranikot.html" class="btn primary-btn">View Trail</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Experience This Trail?</h2>
+                <p>Book your guided hike to Nagarkot with our experienced team</p>
+                <a href="#" class="btn primary-btn">Book Now</a>
+                <a href="../index.html#contact" class="btn secondary-btn">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="hikemandu.png" alt="Hikemandu Logo" class="footer-logo-img">
+                </div>
+                <div class="footer-nav">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../index.html#kathmandu-hikes">Kathmandu Hikes</a></li>
+                        <li><a href="../index.html#destinations">Popular Treks</a></li>
+                        <li><a href="../index.html#gallery">Gallery</a></li>
+                        <li><a href="../index.html#about">About</a></li>
+                        <li><a href="../index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Thamel, Kathmandu, Nepal</p>
+                    <p><i class="fas fa-phone"></i> +977 9813092717</p>
+                    <p><i class="fas fa-envelope"></i> pratikshiwakoti105@gmail.com</p>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Subscribe to Our Newsletter</h4>
+                    <p>Get updates on new treks and special offers</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; <span id="year"></span> Hikemandu. All rights reserved.
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+            <div class="footer-credit">
+                <p>Designed By Pratik Shiwakoti</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet-ant-path@1.3.0/dist/leaflet-ant-path.js"></script>
+    <script src="https://unpkg.com/leaflet-fullscreen@1.0.2/dist/Leaflet.fullscreen.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.79.0/dist/L.Control.Locate.min.js"></script>
+    <script src="../script.js"></script>
+    <script src="../trail-details.js"></script>
+    <script src="search.js"></script>
+</body>
+</html>
