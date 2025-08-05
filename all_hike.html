@@ -6,6 +6,171 @@
     <title>Hiking Trails Near Kathmandu</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<style>
+.hike-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.hike-img::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+}
+
+.hike-badge {
+  z-index: 2; /* Ensure badge stays above overlay */
+}
+</style>
+<style>
+.theme-toggle-wrapper {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  z-index: 101;
+}
+
+.theme-toggle {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.theme-toggle-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #487d83;
+  border-radius: 999px;
+  width: 60px;
+  height: 30px;
+  cursor: pointer;
+  padding: 0 8px;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-toggle-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  z-index: 2;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle-icons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  padding: 0 8px;
+  box-sizing: border-box;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.theme-toggle-icons i {
+  font-size: 14px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.theme-toggle-icons .sun {
+  color: #fbc02d;
+  transform: scale(0.8);
+  opacity: 0;
+}
+
+.theme-toggle-icons .moon {
+  color: #fff;
+  transform: scale(0.8);
+}
+
+/* Dark mode styles */
+[data-theme="dark"] .theme-toggle-label {
+  background-color: #374151;
+}
+
+[data-theme="dark"] .theme-toggle-thumb {
+  transform: translateX(30px);
+  background-color: #fbc02d;
+}
+
+[data-theme="dark"] .theme-toggle-icons .sun {
+  transform: scale(1);
+  opacity: 1;
+}
+
+[data-theme="dark"] .theme-toggle-icons .moon {
+  transform: scale(0.5);
+  opacity: 0;
+}
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.filter-group {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background-color: #e2e8f0;
+  border: none;
+  border-radius: 20px;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.filter-btn.active {
+  background-color: #2e5d3e;
+  color: white;
+}
+
+/* Pagination styling */
+.pagination {
+  text-align: center;
+  margin: 2rem 0;
+}
+.page-btn {
+  margin: 0 0.25rem;
+  padding: 0.4rem 0.8rem;
+  background: #eee;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.page-btn.active {
+  background: #ff8c42;
+  color: white;
+  font-weight: bold;
+}
+.page-btn:hover {
+  background: #ccc;
+}
+
+</style>
 </head>
 <body>
     <header>
@@ -126,98 +291,1274 @@
   </label>
 </div>
 
-<style>.theme-toggle-wrapper {
-  position: relative;
-  width: 60px;
-  height: 30px;
-  z-index: 101;
-}
 
-.theme-toggle {
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
+    </header>
 
-.theme-toggle-label {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #487d83;
-  border-radius: 999px;
-  width: 60px;
-  height: 30px;
-  cursor: pointer;
-  padding: 0 8px;
-  box-sizing: border-box;
-  transition: background-color 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
+    <main>
+        <section class="hero">
+            <h2>Discover the Best Hiking Trails in Nepal</h2>
+            <p>Explore the natural beauty and cultural heritage of the Kathmandu Valley</p>
+        </section>
 
-.theme-toggle-thumb {
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background-color: #fff;
-  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-  z-index: 2;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
+        <div class="container">
+            <div class="intro">
+                <p>Welcome to our guide on the best hiking trails near Kathmandu! Whether you're a seasoned trekker or a casual hiker, you'll find trails that suit your level of experience and interest. From lush forests to panoramic mountain views, these hikes offer a perfect escape into nature.</p>
+            </div>
+        </main>
+            <div class="hikes-header"> 
+                <h2>Hikes Near Kathmandu</h2>
+                <p>Explore the beautiful trails around Kathmandu Valley, perfect for day hikes and weekend getaways</p>
+            </div>
+            
+            <div class="filter-bar">
+  <!-- District Filter -->
+  <div class="filter-group">
+    <label>Filter by District:</label>
+    <button class="filter-btn district-btn active" data-location="all">All</button>
+    <button class="filter-btn district-btn" data-location="kathmandu">Kathmandu</button>
+    <button class="filter-btn district-btn" data-location="lalitpur">Lalitpur</button>
+    <button class="filter-btn district-btn" data-location="bhaktapur">Bhaktapur</button>
+    <button class="filter-btn district-btn" data-location="underrated">Underrated</button>
+  </div>
 
-.theme-toggle-icons {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  padding: 0 8px;
-  box-sizing: border-box;
-  pointer-events: none;
-  z-index: 1;
-}
+  <!-- Difficulty Filter -->
+  <div class="filter-group">
+    <label>Filter by Difficulty:</label>
+    <button class="filter-btn difficulty-btn active" data-difficulty="all">All</button>
+    <button class="filter-btn difficulty-btn" data-difficulty="easy">Easy</button>
+    <button class="filter-btn difficulty-btn" data-difficulty="moderate">Moderate</button>
+    <button class="filter-btn difficulty-btn" data-difficulty="challenging">Challenging</button>
+  </div>
+  <button id="reset-filters" class="filter-btn" style="background-color: #d9534f; color: white;">Reset Filters</button>
 
-.theme-toggle-icons i {
-  font-size: 14px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
+</div>
+<div id="no-results" style="display: none; text-align: center; margin: 2rem 0; font-weight: 600; color: #ffffff;">
+  😕 No hiking trails match your filter selection.
+</div>
+    <div id="hike-cards-container" class="hikes-card-container">
+        <div class="hikes-card-container">
+            <div class="hikes-grid">
+                <div class="hike-card" data-location="kathmandu" data-difficulty="moderate">
+                    <div class="hike-img">
+                        <img src="shivapuri.jpg" alt="Shivapuri National Park">
+                        <div class="hike-badge">Popular</div>
+                    </div>
+                    <div class="hike-info">
+                        <h3>Shivapuri National Park</h3>
+                        <div class="hike-meta">
+                            <span><i class="fas fa-clock"></i> 5-6 hours</span>
+                            <span><i class="fas fa-mountain"></i> Moderate</span>
+                        </div>
+                        <p>Explore lush forests and visit Manichud Daha, offering stunning views of the Kathmandu Valley.</p>
+                        <div class="hike-details">
+                            <p><i class="fas fa-map-marker-alt"></i> North of Kathmandu</p>
+                            <p><i class="fas fa-route"></i> 12 km round trip</p>
+                        </div>
+                        <a href="shivapuri.html" class="btn primary-btn">View Trail</a>
+                    </div>
+                </div>
+                
+                <div class="hike-card" data-location="bhaktapur" data-difficulty="moderate">
+                    <div class="hike-img">
+                        <img src="Nagarkot.jpg" alt="Nagarkot Hike">
+                    </div>
+                    <div class="hike-info">
+                        <h3>Nagarkot Sunrise Trek</h3>
+                        <div class="hike-meta">
+                            <span><i class="fas fa-clock"></i> 4-5 hours</span>
+                            <span><i class="fas fa-mountain"></i> Easy to Moderate</span>
+                        </div>
+                        <p>Experience breathtaking sunrise views of the Himalayas from this popular viewpoint.</p>
+                        <div class="hike-details">
+                            <p><i class="fas fa-map-marker-alt"></i> East of Kathmandu</p>
+                            <p><i class="fas fa-route"></i> 8 km round trip</p>
+                        </div>
+                        <a href="nagarkot.html" class="btn primary-btn">View Trail</a>
+                    </div>
+                </div>
+                
+                <div class="hike-card" data-location="kathmandu" data-difficulty="moderate">
+                    <div class="hike-img">
+                        <img src="chandragiri.jpeg" alt="Chandragiri Hills">
+                    </div>
+                    <div class="hike-info">
+                        <h3>Chandragiri Hills</h3>
+                        <div class="hike-meta">
+                            <span><i class="fas fa-clock"></i> 3-4 hours</span>
+                            <span><i class="fas fa-mountain"></i> Moderate</span>
+                        </div>
+                        <p>Hike to the summit for panoramic views of Kathmandu Valley and the Himalayan range.</p>
+                        <div class="hike-details">
+                            <p><i class="fas fa-map-marker-alt"></i> Southwest of Kathmandu</p>
+                            <p><i class="fas fa-route"></i> 7 km one way</p>
+                        </div>
+                        <a href="#" class="btn primary-btn">View Trail</a>
+                    </div>
+                </div>
+                
+                <div class="hike-card" data-location="lalitpur" data-difficulty="challenging">
+                    <div class="hike-img">
+                        <img src="phulchoki.jpg" alt="Phulchowki Hill">
+                        <div class="hike-badge">New</div>
+                    </div>
+                    <div class="hike-info">
+                        <h3>Phulchowki Hill</h3>
+                        <div class="hike-meta">
+                            <span><i class="fas fa-clock"></i> 6-7 hours</span>
+                            <span><i class="fas fa-mountain"></i> Challenging</span>
+                        </div>
+                        <p>The highest hill around Kathmandu Valley, offering rich biodiversity and mountain views.</p>
+                        <div class="hike-details">
+                            <p><i class="fas fa-map-marker-alt"></i> South of Kathmandu</p>
+                            <p><i class="fas fa-route"></i> 14 km round trip</p>
+                        </div>
+                        <a href="#" class="btn primary-btn">View Trail</a>
+                    </div>
+                </div>
+                
+                <div class="hike-card" data-location="bhaktapur" data-difficulty="easy">
+                    <div class="hike-img">
+                        <img src="ranikot.jpg" alt="Ranikot">
+                    </div>
+                    <div class="hike-info">
+                        <h3>Ranikot, Bhaktapur</h3>
+                        <div class="hike-meta">
+                            <span><i class="fas fa-clock"></i> 4-5 hours</span>
+                            <span><i class="fas fa-mountain"></i> Easy</span>
+                        </div>
+                        <p>A historical fort with beautiful surroundings and cultural significance.</p>
+                        <div class="hike-details">
+                            <p><i class="fas fa-map-marker-alt"></i> Bhaktapur</p>
+                            <p><i class="fas fa-route"></i> 6 km round trip</p>
+                        </div>
+                        <a href="#" class="btn primary-btn">View Trail</a>
+                    </div>
+                </div>
+                
+                <div class="hike-card" data-location="bhaktapur" data-difficulty="easy">
+                    <div class="hike-img">
+                        <img src="Hiking Image 8.jpeg" alt="Rani Jhula">
+                    </div>
+                    <div class="hike-info">
+                        <h3>Rani Jhula, Bhaktapur</h3>
+                        <div class="hike-meta">
+                            <span><i class="fas fa-clock"></i> 3-4 hours</span>
+                            <span><i class="fas fa-mountain"></i> Easy</span>
+                        </div>
+                        <p>A scenic trail with beautiful suspension bridges and riverside views.</p>
+                        <div class="hike-details">
+                            <p><i class="fas fa-map-marker-alt"></i> Bhaktapur</p>
+                            <p><i class="fas fa-route"></i> 5 km round trip</p>
+                        </div>
+                        <a href="#" class="btn primary-btn">View Trail</a>
+                    </div>
+                </div>
+            
+                <div class="hike-card" data-location="bhaktapur" data-difficulty="moderate">
+                    <div class="hike-img">
+                        <img src="https://source.unsplash.com/random/600x400/?nagarkot,view,nepal" alt="Nagarkot Sunrise Trek">
+                    </div>
+                    <div class="hike-info">
+                        <h3>Nagarkot Sunrise Trek</h3>
+                        <div class="hike-meta">
+                            <span><i class="fas fa-clock"></i> 4-5 hours</span>
+                            <span><i class="fas fa-mountain"></i> Easy to Moderate</span>
+                        </div>
+                        <p>Experience breathtaking sunrise views of the Himalayas from this popular viewpoint.</p>
+                        <div class="hike-details">
+                            <p><i class="fas fa-map-marker-alt"></i> East of Kathmandu</p>
+                            <p><i class="fas fa-route"></i> 8 km round trip</p>
+                        </div>
+                        <a href="trails/nagarkot.html" class="btn primary-btn">View Trail</a>
+                    </div>
+                </div>
+                    <div class="hike-card" data-location="kathmandu" data-difficulty="moderate">
+                    <div class="hike-img">
+                        <img src="https://source.unsplash.com/random/600x400/?champadevi,temple,nepal" alt="Champadevi Hill">
+                    </div>
+                    <div class="hike-info">
+                        <h3>Champadevi Hill</h3>
+                        <div class="hike-meta">
+                            <span><i class="fas fa-clock"></i> 4-5 hours</span>
+                            <span><i class="fas fa-mountain"></i> Moderate</span>
+                        </div>
+                        <p>Sacred hill with temple offering panoramic views of Kathmandu Valley and Himalayas.</p>
+                        <div class="hike-details">
+                            <p><i class="fas fa-map-marker-alt"></i> Southwest of Kathmandu</p>
+                            <p><i class="fas fa-route"></i> 10 km round trip</p>
+                        </div>
+                        <a href="trails/champadevi.html" class="btn primary-btn">View Trail</a>
+                    </div>
+                </div>
+                
+                <div class="hike-card" data-location="kathmandu" data-difficulty="easy">
+                    <div class="hike-img">
+                        <img src="https://source.unsplash.com/random/600x400/?nagarjun,forest,nepal" alt="Nagarjun Forest">
+                    </div>
+                    <div class="hike-info">
+                        <h3>Nagarjun Forest Reserve</h3>
+                        <div class="hike-meta">
+                            <span><i class="fas fa-clock"></i> 3-4 hours</span>
+                            <span><i class="fas fa-mountain"></i> Easy to Moderate</span>
+                        </div>
+                        <p>Peaceful forest hike with Buddhist monasteries and wildlife spotting opportunities.</p>
+                        <div class="hike-details">
+                            <p><i class="fas fa-map-marker-alt"></i> Northwest of Kathmandu</p>
+                            <p><i class="fas fa-route"></i> 8 km round trip</p>
+                        </div>
+                        <a href="trails/nagarjun.html" class="btn primary-btn">View Trail</a>
+                    </div>
+                </div>
+                
+                <div class="hike-card" data-location="kathmandu" data-difficulty="moderate">
+                    <div class="hike-img">
+                        <img src="https://source.unsplash.com/random/600x400/?chisapani,village,nepal" alt="Chisapani">
+                    </div>
+                    <div class="hike-info">
+                        <h3>Sundarijal to Chisapani</h3>
+                        <div class="hike-meta">
+                            <span><i class="fas fa-clock"></i> 5-6 hours</span>
+                            <span><i class="fas fa-mountain"></i> Moderate</span>
+                        </div>
+                        <p>Classic trek through Shivapuri National Park to the charming village of Chisapani.</p>
+                        <div class="hike-details">
+                            <p><i class="fas fa-map-marker-alt"></i> Northeast of Kathmandu</p>
+                            <p><i class="fas fa-route"></i> 15 km one way</p>
+                        </div>
+                        <a href="trails/chisapani.html" class="btn primary-btn">View Trail</a>
+                    </div>
+                </div>
+                
+                <div class="hike-card" data-location="kathmandu" data-difficulty="easy">
+                    <div class="hike-img">
+                        <img src="https://source.unsplash.com/random/600x400/?kakani,village,nepal" alt="Kakani">
+                    </div>
+                    <div class="hike-info">
+                        <h3>Kakani Hill Station</h3>
+                        <div class="hike-meta">
+                            <span><i class="fas fa-clock"></i> 4-5 hours</span>
+                            <span><i class="fas fa-mountain"></i> Easy to Moderate</span>
+                        </div>
+                        <p>Scenic hill station with strawberry farms and stunning Himalayan views.</p>
+                        <div class="hike-details">
+                            <p><i class="fas fa-map-marker-alt"></i> Northwest of Kathmandu</p>
+                            <p><i class="fas fa-route"></i> 12 km round trip</p>
+                        </div>
+                        <a href="trails/kakani.html" class="btn primary-btn">View Trail</a>
+                    </div>
+                </div>
+                
+                <div class="hike-card" data-location="bhaktapur" data-difficulty="easy">
+                    <div class="hike-img">
+                        <img src="https://source.unsplash.com/random/600x400/?dhulikhel,sunrise,nepal" alt="Dhulikhel">
+                    </div>
+                    <div class="hike-info">
+                        <h3>Dhulikhel Sunrise Point</h3>
+                        <div class="hike-meta">
+                            <span><i class="fas fa-clock"></i> 3-4 hours</span>
+                            <span><i class="fas fa-mountain"></i> Easy</span>
+                        </div>
+                        <p>Ancient Newari town with spectacular sunrise views and cultural heritage.</p>
+                        <div class="hike-details">
+                            <p><i class="fas fa-map-marker-alt"></i> East of Kathmandu</p>
+                            <p><i class="fas fa-route"></i> 6 km round trip</p>
+                        </div>
+                        <a href="trails/dhulikhel.html" class="btn primary-btn">View Trail</a>
+                    </div>
+                </div>
+            
+                <div class="hike-card" data-location="lalitpur" data-difficulty="easy">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?lakuri,bhanjyang,nepal" alt="Lakuri Bhanjyang">
+  </div>
+  <div class="hike-info">
+    <h3>Lakuri Bhanjyang</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 3-4 hours</span>
+      <span><i class="fas fa-mountain"></i> Easy</span>
+    </div>
+    <p>Perfect picnic and sunrise hike offering panoramic views of the Himalayas and Kathmandu Valley.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Southeast of Lalitpur</p>
+      <p><i class="fas fa-route"></i> 7 km round trip</p>
+    </div>
+    <a href="trails/lakuri-bhanjyang.html" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
 
-.theme-toggle-icons .sun {
-  color: #fbc02d;
-  transform: scale(0.8);
-  opacity: 0;
-}
+<div class="hike-card" data-location="kathmandu" data-difficulty="easy">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?seto,gumba,kathmandu" alt="White Monastery">
+  </div>
+  <div class="hike-info">
+    <h3>White Monastery (Seto Gumba)</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 2-3 hours</span>
+      <span><i class="fas fa-mountain"></i> Easy</span>
+    </div>
+    <p>A peaceful hike to a stunning monastery offering wide city views and Buddhist art.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Nagarjun, Kathmandu</p>
+      <p><i class="fas fa-route"></i> 5 km round trip</p>
+    </div>
+    <a href="trails/seto-gumba.html" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
 
-.theme-toggle-icons .moon {
-  color: #fff;
-  transform: scale(0.8);
-}
+<div class="hike-card" data-location="kathmandu" data-difficulty="moderate">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?jamacho,monastery,nepal" alt="Jamacho Gumba">
+  </div>
+  <div class="hike-info">
+    <h3>Jamacho Gumba Hike</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 4-5 hours</span>
+      <span><i class="fas fa-mountain"></i> Moderate</span>
+    </div>
+    <p>A forested hike in Nagarjun with spiritual significance and a lookout tower.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Nagarjun Forest, Kathmandu</p>
+      <p><i class="fas fa-route"></i> 10 km round trip</p>
+    </div>
+    <a href="trails/jamacho.html" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
 
-/* Dark mode styles */
-[data-theme="dark"] .theme-toggle-label {
-  background-color: #374151;
-}
+<div class="hike-card" data-location="bhaktapur" data-difficulty="moderate">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?namobuddha,temple,nepal" alt="Namobuddha Trail">
+  </div>
+  <div class="hike-info">
+    <h3>Namobuddha via Panauti</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 6-7 hours</span>
+      <span><i class="fas fa-mountain"></i> Moderate</span>
+    </div>
+    <p>Spiritual trail passing through rural villages and sacred Buddhist landmarks.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> East of Bhaktapur</p>
+      <p><i class="fas fa-route"></i> 15 km one way</p>
+    </div>
+    <a href="trails/namobuddha.html" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
 
-[data-theme="dark"] .theme-toggle-thumb {
-  transform: translateX(30px);
-  background-color: #fbc02d;
-}
+<div class="hike-card" data-location="lalitpur" data-difficulty="challenging">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?godawari,forest,nepal" alt="Godawari to Phulchoki">
+  </div>
+  <div class="hike-info">
+    <h3>Godawari to Phulchoki</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 7-8 hours</span>
+      <span><i class="fas fa-mountain"></i> Challenging</span>
+    </div>
+    <p>The longest forested climb in the valley leading to bird-watching spots and panoramic views.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> South of Lalitpur</p>
+      <p><i class="fas fa-route"></i> 16 km round trip</p>
+    </div>
+    <a href="trails/godawari-phulchoki.html" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+<!-- Pilot Baba Ashram -->
+<div class="hike-card" data-location="underrated" data-difficulty="easy">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?forest,ashram,nepal" alt="Pilot Baba Ashram">
+  </div>
+  <div class="hike-info">
+    <h3>Pilot Baba Ashram Trail</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 2–3 hours</span>
+      <span><i class="fas fa-mountain"></i> Easy</span>
+    </div>
+    <p>A peaceful forest trail in Bhaktapur leading to a serene ashram and meditation caves.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Suryabinayak, Bhaktapur</p>
+      <p><i class="fas fa-route"></i> 6 km round trip</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
 
-[data-theme="dark"] .theme-toggle-icons .sun {
-  transform: scale(1);
-  opacity: 1;
-}
+<!-- Tarebhir – Gokarna Ridge -->
+<div class="hike-card" data-location="underrated" data-difficulty="easy">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?hill,trail,nepal" alt="Tarebhir Gokarna">
+  </div>
+  <div class="hike-info">
+    <h3>Tarebhir – Gokarna Ridge</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 3–4 hours</span>
+      <span><i class="fas fa-mountain"></i> Easy to Moderate</span>
+    </div>
+    <p>Quiet clifftop trail above Gokarna with sweeping views and forest serenity.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Northeast Kathmandu</p>
+      <p><i class="fas fa-route"></i> 7 km round trip</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
 
-[data-theme="dark"] .theme-toggle-icons .moon {
-  transform: scale(0.5);
-  opacity: 0;
-}
-</style>
+<!-- Bishnudwar Trail -->
+<div class="hike-card" data-location="underrated" data-difficulty="moderate">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?river,forest,nepal" alt="Bishnudwar Trail">
+  </div>
+  <div class="hike-info">
+    <h3>Bishnudwar Trail</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 2.5–3.5 hours</span>
+      <span><i class="fas fa-mountain"></i> Moderate</span>
+    </div>
+    <p>Hidden source of the Bishnumati River with rich forest and spiritual energy.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Budhanilkantha, Kathmandu</p>
+      <p><i class="fas fa-route"></i> 6 km round trip</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<!-- Bungamati to Khokana -->
+<div class="hike-card" data-location="underrated" data-difficulty="easy">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?bungamati,kathmandu,village" alt="Bungamati Khokana">
+  </div>
+  <div class="hike-info">
+    <h3>Bungamati to Khokana</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 2 hours</span>
+      <span><i class="fas fa-mountain"></i> Easy</span>
+    </div>
+    <p>A heritage walk between two ancient Newar towns, through rice fields and temples.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> South Lalitpur</p>
+      <p><i class="fas fa-route"></i> 4 km one way</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<!-- Sanga to Nala Forest Trail -->
+<div class="hike-card" data-location="underrated" data-difficulty="easy">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?forest,nepal,trail" alt="Sanga to Nala">
+  </div>
+  <div class="hike-info">
+    <h3>Sanga to Nala Forest Trail</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 3 hours</span>
+      <span><i class="fas fa-mountain"></i> Easy</span>
+    </div>
+    <p>A tranquil and shady hike through forests and village paths between two hill towns.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Border of Bhaktapur/Kavre</p>
+      <p><i class="fas fa-route"></i> 8 km one way</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<!-- Chobhar Gorge & Taudaha -->
+<div class="hike-card" data-location="underrated" data-difficulty="easy">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?chobhar,gorge,nepal" alt="Chobhar Gorge Hike">
+  </div>
+  <div class="hike-info">
+    <h3>Chobhar Gorge & Taudaha Loop</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 3 hours</span>
+      <span><i class="fas fa-mountain"></i> Easy</span>
+    </div>
+    <p>Explore the mythic gorge, Taudaha Lake, and small caves with zero tourist rush.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Southwest Kathmandu</p>
+      <p><i class="fas fa-route"></i> 5 km loop</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<!-- Kritipur to Champadevi (Via Bhanjyang) -->
+<div class="hike-card" data-location="underrated" data-difficulty="moderate">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?champadevi,forest,kathmandu" alt="Kritipur to Champadevi">
+  </div>
+  <div class="hike-info">
+    <h3>Kritipur to Champadevi</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 5–6 hours</span>
+      <span><i class="fas fa-mountain"></i> Moderate to Challenging</span>
+    </div>
+    <p>Rarely used southern approach to Champadevi via Bhanjyang with tranquil paths.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Kritipur, Kathmandu</p>
+      <p><i class="fas fa-route"></i> 12 km round trip</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<!-- Tinpiple – Tokha Forest Route -->
+<div class="hike-card" data-location="underrated" data-difficulty="easy">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?tokha,pine,forest" alt="Tinpiple to Tokha">
+  </div>
+  <div class="hike-info">
+    <h3>Tinpiple – Tokha Forest Walk</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 2.5 hours</span>
+      <span><i class="fas fa-mountain"></i> Easy</span>
+    </div>
+    <p>Hidden forest route in northern Kathmandu perfect for a quiet morning escape.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Tokha, Kathmandu</p>
+      <p><i class="fas fa-route"></i> 5 km round trip</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+<!-- Sankhu to Bajrayogini to Nagarkot -->
+<div class="hike-card" data-location="underrated" data-difficulty="moderate">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?sankhu,temple,nepal" alt="Sankhu to Nagarkot">
+  </div>
+  <div class="hike-info">
+    <h3>Sankhu to Bajrayogini to Nagarkot</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 6–7 hours</span>
+      <span><i class="fas fa-mountain"></i> Moderate</span>
+    </div>
+    <p>Forest and village trail connecting the sacred Bajrayogini temple to Nagarkot ridge.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Kathmandu to Bhaktapur</p>
+      <p><i class="fas fa-route"></i> 14 km one way</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<!-- Ichangu Narayan to Seto Gumba -->
+<div class="hike-card" data-location="kathmandu" data-difficulty="easy">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?gumba,temple,nepal" alt="Ichangu to Seto Gumba">
+  </div>
+  <div class="hike-info">
+    <h3>Ichangu Narayan to Seto Gumba</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 2.5 hours</span>
+      <span><i class="fas fa-mountain"></i> Easy</span>
+    </div>
+    <p>Short hike between two peaceful hilltop temples with valley views and forest paths.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> West Kathmandu</p>
+      <p><i class="fas fa-route"></i> 5 km round trip</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<!-- Tokha to Budhanilkantha -->
+<div class="hike-card" data-location="kathmandu" data-difficulty="easy">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?tokha,forest,nepal" alt="Tokha to Budhanilkantha">
+  </div>
+  <div class="hike-info">
+    <h3>Tokha to Budhanilkantha Trail</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 3 hours</span>
+      <span><i class="fas fa-mountain"></i> Easy</span>
+    </div>
+    <p>Quiet northern ridge trail through pine forest connecting suburban hills.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Kathmandu</p>
+      <p><i class="fas fa-route"></i> 7 km one way</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<!-- Chapagaun to Godam Hill -->
+<div class="hike-card" data-location="lalitpur" data-difficulty="moderate">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?chapagaun,hill,nepal" alt="Godam Hill Trail">
+  </div>
+  <div class="hike-info">
+    <h3>Chapagaun to Godam Hill</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 3 hours</span>
+      <span><i class="fas fa-mountain"></i> Moderate</span>
+    </div>
+    <p>Southern Lalitpur trail with forest views and hilltop resting points.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Lalitpur</p>
+      <p><i class="fas fa-route"></i> 8 km round trip</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<!-- Doleshwar to Sanga Forest Trail -->
+<div class="hike-card" data-location="bhaktapur" data-difficulty="easy">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?doleshwar,forest,nepal" alt="Doleshwar to Sanga Trail">
+  </div>
+  <div class="hike-info">
+    <h3>Doleshwar to Sanga Trail</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 2.5–3.5 hours</span>
+      <span><i class="fas fa-mountain"></i> Easy</span>
+    </div>
+    <p>A hidden trail combining religious and scenic forest walk east of Bhaktapur.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Bhaktapur</p>
+      <p><i class="fas fa-route"></i> 6 km one way</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<!-- Bungamati Heritage Trail -->
+<div class="hike-card" data-location="lalitpur" data-difficulty="easy">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?bungamati,newar,nepal" alt="Bungamati Heritage Trail">
+  </div>
+  <div class="hike-info">
+    <h3>Bungamati Heritage Walk</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 2 hours</span>
+      <span><i class="fas fa-mountain"></i> Easy</span>
+    </div>
+    <p>A cultural stroll through the ancient Newar town of Bungamati and rice fields.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Lalitpur</p>
+      <p><i class="fas fa-route"></i> 4 km loop</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<!-- Taudaha to Chobhar -->
+<div class="hike-card" data-location="kathmandu" data-difficulty="easy">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?taudaha,lake,nepal" alt="Taudaha to Chobhar">
+  </div>
+  <div class="hike-info">
+    <h3>Taudaha to Chobhar Trail</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 2.5 hours</span>
+      <span><i class="fas fa-mountain"></i> Easy</span>
+    </div>
+    <p>Leisurely lakeside and gorge walk with spiritual sites and local culture.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Southwest Kathmandu</p>
+      <p><i class="fas fa-route"></i> 5 km loop</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+<!--  Bajrabarahi to Godam Hill -->
+<div class="hike-card" data-location="lalitpur" data-difficulty="moderate">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?bajrabarahi,hill,nepal" alt="Bajrabarahi to Godam Hill">
+  </div>
+  <div class="hike-info">
+    <h3>Bajrabarahi to Godam Hill</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 3 hours</span>
+      <span><i class="fas fa-mountain"></i> Moderate</span>
+    </div>
+    <p>Quiet ridge hike near Chapagaun offering views and rural culture.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Southern Lalitpur</p>
+      <p><i class="fas fa-route"></i> 7 km round trip</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<!-- Chhampi to Lakuri Forest Trail -->
+<div class="hike-card" data-location="lalitpur" data-difficulty="easy">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?lakuri,forest,nepal" alt="Chhampi to Lakuri Bhanjyang">
+  </div>
+  <div class="hike-info">
+    <h3>Chhampi to Lakuri Forest Trail</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 3–4 hours</span>
+      <span><i class="fas fa-mountain"></i> Easy to Moderate</span>
+    </div>
+    <p>Forest-lined route from Chhampi village to the scenic Lakuri ridge.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Lalitpur</p>
+      <p><i class="fas fa-route"></i> 6 km round trip</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<!-- Jhule to Nagarkot -->
+<div class="hike-card" data-location="bhaktapur" data-difficulty="moderate">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?jhule,hiking,nagarkot" alt="Jhule to Nagarkot">
+  </div>
+  <div class="hike-info">
+    <h3>Jhule to Nagarkot Trail</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 4–5 hours</span>
+      <span><i class="fas fa-mountain"></i> Moderate</span>
+    </div>
+    <p>Forested hike from Shivapuri edge to the popular Nagarkot viewpoint.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Bhaktapur</p>
+      <p><i class="fas fa-route"></i> 12 km one way</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<!-- Bishanku Narayan to Godavari -->
+<div class="hike-card" data-location="lalitpur" data-difficulty="easy">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?godavari,temple,nepal" alt="Bishanku Narayan to Godavari">
+  </div>
+  <div class="hike-info">
+    <h3>Bishanku Narayan to Godavari</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 2.5 hours</span>
+      <span><i class="fas fa-mountain"></i> Easy</span>
+    </div>
+    <p>Forest trail connecting two spiritual sites with excellent biodiversity.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Lalitpur</p>
+      <p><i class="fas fa-route"></i> 5.5 km one way</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<!-- Tokha to Tinpiple Ridge Trail -->
+<div class="hike-card" data-location="kathmandu" data-difficulty="easy">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?tokha,greenery,nepal" alt="Tokha to Tinpiple Trail">
+  </div>
+  <div class="hike-info">
+    <h3>Tokha to Tinpiple Ridge</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 2.5 hours</span>
+      <span><i class="fas fa-mountain"></i> Easy</span>
+    </div>
+    <p>Secluded walk across pine-covered hills perfect for quiet morning hikes.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Northern Kathmandu</p>
+      <p><i class="fas fa-route"></i> 6 km round trip</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+<!-- Suryachaur Hill Trail -->
+<div class="hike-card" data-location="underrated" data-difficulty="moderate">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?suryachaur,hill,nepal" alt="Suryachaur Hill Trail">
+  </div>
+  <div class="hike-info">
+    <h3>Suryachaur Hill Trail</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 4 hours</span>
+      <span><i class="fas fa-mountain"></i> Moderate</span>
+    </div>
+    <p>Panoramic ridge walk with open meadows and picnic spots near Kakani.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Northern Kathmandu</p>
+      <p><i class="fas fa-route"></i> 10 km round trip</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<!-- Tika Bhairab to Lele Trail -->
+<div class="hike-card" data-location="lalitpur" data-difficulty="easy">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?lele,village,nepal" alt="Tika Bhairab to Lele">
+  </div>
+  <div class="hike-info">
+    <h3>Tika Bhairab to Lele Trail</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 3–4 hours</span>
+      <span><i class="fas fa-mountain"></i> Easy</span>
+    </div>
+    <p>Hidden southern valley route through farmland, temples, and peaceful settlements.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> South Lalitpur</p>
+      <p><i class="fas fa-route"></i> 9 km one way</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<!-- Bhangal to Shivapuri Peak -->
+<div class="hike-card" data-location="kathmandu" data-difficulty="challenging">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?shivapuri,peak,nepal" alt="Bhangal to Shivapuri">
+  </div>
+  <div class="hike-info">
+    <h3>Bhangal to Shivapuri Peak</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 6–7 hours</span>
+      <span><i class="fas fa-mountain"></i> Challenging</span>
+    </div>
+    <p>Steep climb through dense forest to the summit of Shivapuri Hill (2732m).</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Northern Kathmandu</p>
+      <p><i class="fas fa-route"></i> 14 km round trip</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<!-- Suryabinayak to Ghyampe Danda -->
+<div class="hike-card" data-location="bhaktapur" data-difficulty="easy">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?ghyampe,forest,nepal" alt="Suryabinayak to Ghyampe Danda">
+  </div>
+  <div class="hike-info">
+    <h3>Suryabinayak to Ghyampe Danda</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 3 hours</span>
+      <span><i class="fas fa-mountain"></i> Easy</span>
+    </div>
+    <p>A short forest trail from Bhaktapur city edge to a peaceful viewpoint and picnic area.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Bhaktapur</p>
+      <p><i class="fas fa-route"></i> 6 km round trip</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<!-- Tindhara to Matatirtha -->
+<div class="hike-card" data-location="underrated" data-difficulty="easy">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?matatirtha,spring,nepal" alt="Tindhara to Matatirtha">
+  </div>
+  <div class="hike-info">
+    <h3>Tindhara to Matatirtha Trail</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 2.5 hours</span>
+      <span><i class="fas fa-mountain"></i> Easy</span>
+    </div>
+    <p>Hidden footpath across villages and springs on the western rim of the valley.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Southwest Kathmandu</p>
+      <p><i class="fas fa-route"></i> 5 km round trip</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<!-- Tokha to Jhor -->
+<div class="hike-card" data-location="kathmandu" data-difficulty="easy">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?jhor,waterfall,nepal" alt="Tokha to Jhor">
+  </div>
+  <div class="hike-info">
+    <h3>Tokha to Jhor Waterfall</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 3 hours</span>
+      <span><i class="fas fa-mountain"></i> Easy</span>
+    </div>
+    <p>Short northern hike ending at a small but beautiful waterfall near Shivapuri base.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Kathmandu</p>
+      <p><i class="fas fa-route"></i> 6 km round trip</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<!-- Nala to Namobuddha Ridge -->
+<div class="hike-card" data-location="underrated" data-difficulty="moderate">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?nala,hill,nepal" alt="Nala to Namobuddha Ridge">
+  </div>
+  <div class="hike-info">
+    <h3>Nala to Namobuddha Ridge</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 4.5 hours</span>
+      <span><i class="fas fa-mountain"></i> Moderate</span>
+    </div>
+    <p>Underrated ridge trail with panoramic views of terraced hills and Buddhist culture.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Border Bhaktapur/Kavre</p>
+      <p><i class="fas fa-route"></i> 10 km one way</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<!-- Godawari to Hattiban -->
+<div class="hike-card" data-location="lalitpur" data-difficulty="moderate">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?hattiban,trail,nepal" alt="Godawari to Hattiban">
+  </div>
+  <div class="hike-info">
+    <h3>Godawari to Hattiban Forest Trail</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 4 hours</span>
+      <span><i class="fas fa-mountain"></i> Moderate</span>
+    </div>
+    <p>Scenic forest walk connecting two peaceful resort areas in southern Lalitpur.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Lalitpur</p>
+      <p><i class="fas fa-route"></i> 9 km one way</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+<!-- Bhimdhunga to Gurje Bhanjyang -->
+<div class="hike-card" data-location="kathmandu" data-difficulty="moderate">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?bhanjyang,hiking" alt="Bhimdhunga to Gurje Bhanjyang">
+  </div>
+  <div class="hike-info">
+    <h3>Bhimdhunga to Gurje Bhanjyang</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 4.5 hours</span>
+      <span><i class="fas fa-mountain"></i> Moderate</span>
+    </div>
+    <p>Rural ridge walk with a mix of forests and mountain glimpses.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Western Kathmandu</p>
+      <p><i class="fas fa-route"></i> 10 km point-to-point</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<!-- Danda Gaun Circuit (via Balthali) -->
+<div class="hike-card" data-location="underrated" data-difficulty="moderate">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?balthali,hike" alt="Danda Gaun Trail">
+  </div>
+  <div class="hike-info">
+    <h3>Danda Gaun Circuit</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 5 hours</span>
+      <span><i class="fas fa-mountain"></i> Moderate</span>
+    </div>
+    <p>Peaceful loop around Danda Gaun with scenic river valleys and terraced fields.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> South-East of Kathmandu</p>
+      <p><i class="fas fa-route"></i> 11 km circuit</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<!-- Changunarayan to Sudal Village -->
+<div class="hike-card" data-location="bhaktapur" data-difficulty="easy">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?changunarayan,trail" alt="Changunarayan to Sudal">
+  </div>
+  <div class="hike-info">
+    <h3>Changunarayan to Sudal</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 2.5 hours</span>
+      <span><i class="fas fa-mountain"></i> Easy</span>
+    </div>
+    <p>Cultural route from temple to farmland village with great local life.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Bhaktapur</p>
+      <p><i class="fas fa-route"></i> 6 km</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<!-- Dhap Dam Circular Trail -->
+<div class="hike-card" data-location="underrated" data-difficulty="easy">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?dhap,dam" alt="Dhap Dam Trail">
+  </div>
+  <div class="hike-info">
+    <h3>Dhap Dam Circular Trail</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 3 hours</span>
+      <span><i class="fas fa-mountain"></i> Easy</span>
+    </div>
+    <p>Scenic circular path around Dhap Dam with views of Shivapuri and streams.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> North Kathmandu</p>
+      <p><i class="fas fa-route"></i> 7 km loop</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<!-- Nagarkot to Dhulikhel Ridge Trail -->
+<div class="hike-card" data-location="bhaktapur" data-difficulty="moderate">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?ridgewalk,nepal" alt="Nagarkot to Dhulikhel">
+  </div>
+  <div class="hike-info">
+    <h3>Nagarkot to Dhulikhel Ridge</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 5 hours</span>
+      <span><i class="fas fa-mountain"></i> Moderate</span>
+    </div>
+    <p>Famous viewpoint-to-viewpoint hike along a forested ridgeline with Himalayan views.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Bhaktapur/Kavre border</p>
+      <p><i class="fas fa-route"></i> 13 km</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<!-- Sanga to Suryabinayak Jungle Trail -->
+<div class="hike-card" data-location="bhaktapur" data-difficulty="easy">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?sanga,hike" alt="Sanga to Suryabinayak">
+  </div>
+  <div class="hike-info">
+    <h3>Sanga to Suryabinayak Jungle Trail</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 2.5 hours</span>
+      <span><i class="fas fa-mountain"></i> Easy</span>
+    </div>
+    <p>Forested footpath from the Shiva statue in Sanga to picnic area in Suryabinayak.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Bhaktapur</p>
+      <p><i class="fas fa-route"></i> 5 km</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<!-- Lakuri Bhanjyang via Lamatar -->
+<div class="hike-card" data-location="lalitpur" data-difficulty="moderate">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?lakuri,nepal" alt="Lakuri Bhanjyang Hike">
+  </div>
+  <div class="hike-info">
+    <h3>Lakuri Bhanjyang via Lamatar</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 4 hours</span>
+      <span><i class="fas fa-mountain"></i> Moderate</span>
+    </div>
+    <p>Steady climb from Lamatar village to a popular picnic hill with mountain views.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Lalitpur</p>
+      <p><i class="fas fa-route"></i> 8 km one way</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<div class="hike-card" data-location="lalitpur" data-difficulty="easy">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?pharping,trail" alt="Pharping Trail">
+  </div>
+  <div class="hike-info">
+    <h3>Tika Bhairab to Pharping Loop</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 3–4 hours</span>
+      <span><i class="fas fa-mountain"></i> Easy</span>
+    </div>
+    <p>Peaceful monastery loop with views of the hills and sacred caves around Pharping.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Lalitpur</p>
+      <p><i class="fas fa-route"></i> 7 km circular</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<div class="hike-card" data-location="kathmandu" data-difficulty="easy">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?chobhar,gorge" alt="Chobhar Trail">
+  </div>
+  <div class="hike-info">
+    <h3>Taudaha to Chobhar Gorge</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 2.5 hours</span>
+      <span><i class="fas fa-mountain"></i> Easy</span>
+    </div>
+    <p>Short but scenic hike with a legendary gorge, hilltop temple, and lakeside views.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Kathmandu</p>
+      <p><i class="fas fa-route"></i> 6 km round</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<div class="hike-card" data-location="kathmandu" data-difficulty="moderate">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?whitegumba,kathmandu" alt="White Gumba Trail">
+  </div>
+  <div class="hike-info">
+    <h3>Machhegaun to Kirtipur via White Gumba</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 4 hours</span>
+      <span><i class="fas fa-mountain"></i> Moderate</span>
+    </div>
+    <p>Quiet monastery trail with panoramic views of the valley and Buddhist temples.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Kathmandu</p>
+      <p><i class="fas fa-route"></i> 10 km one way</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<div class="hike-card" data-location="bhaktapur" data-difficulty="moderate">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?sanga,hiking" alt="Sanga to Aashapuri Trail">
+  </div>
+  <div class="hike-info">
+    <h3>Sanga to Aashapuri Trail</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 3.5 hours</span>
+      <span><i class="fas fa-mountain"></i> Moderate</span>
+    </div>
+    <p>A peaceful hike from Sanga Shiva statue to Aashapuri Mahadev temple through forest ridges.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Bhaktapur</p>
+      <p><i class="fas fa-route"></i> 9 km round</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<div class="hike-card" data-location="kathmandu" data-difficulty="moderate">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?nagarjun,forest" alt="Nagarjun Forest Trail">
+  </div>
+  <div class="hike-info">
+    <h3>Dallu to Nagarjun Forest</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 4 hours</span>
+      <span><i class="fas fa-mountain"></i> Moderate</span>
+    </div>
+    <p>Shady trail starting near Swayambhu leading into quiet jungle routes of Nagarjun.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Kathmandu</p>
+      <p><i class="fas fa-route"></i> 8 km round</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<!-- Tokha to Jhor Mahadev Trail -->
+<div class="hike-card" data-location="kathmandu" data-difficulty="easy">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?tokha,jhor" alt="Tokha to Jhor Mahadev">
+  </div>
+  <div class="hike-info">
+    <h3>Tokha to Jhor Mahadev Trail</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 2.5 hours</span>
+      <span><i class="fas fa-mountain"></i> Easy</span>
+    </div>
+    <p>A beginner-friendly forested hike linking Tokha village to Jhor Mahadev temple with mild ascents.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Kathmandu</p>
+      <p><i class="fas fa-route"></i> 6 km one-way</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<!-- Lele to Bhattedanda Ridge Hike -->
+<div class="hike-card" data-location="lalitpur" data-difficulty="moderate">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?lele,trek" alt="Lele to Bhattedanda Trail">
+  </div>
+  <div class="hike-info">
+    <h3>Lele to Bhattedanda Ridge Hike</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 4 hours</span>
+      <span><i class="fas fa-mountain"></i> Moderate</span>
+    </div>
+    <p>Quiet ridge trail with expansive farmland and pine woods from Lele to Bhattedanda village.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Lalitpur</p>
+      <p><i class="fas fa-route"></i> 8 km one-way</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<!-- Sundarijal to Mulkharka Short Loop -->
+<div class="hike-card" data-location="kathmandu" data-difficulty="easy">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?sundarijal,mulkharka" alt="Sundarijal to Mulkharka Trail">
+  </div>
+  <div class="hike-info">
+    <h3>Sundarijal to Mulkharka Loop</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 3 hours</span>
+      <span><i class="fas fa-mountain"></i> Easy</span>
+    </div>
+    <p>Short nature loop inside Shivapuri Park with waterfalls and peaceful rural scenery.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Kathmandu</p>
+      <p><i class="fas fa-route"></i> 6.5 km round trip</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+<!-- Sanga to Panauti Trail -->
+<div class="hike-card" data-location="bhaktapur" data-difficulty="moderate">
+  <div class="hike-img">
+    <img src="https://source.unsplash.com/random/600x400/?sanga,panauti" alt="Sanga to Panauti Trail">
+  </div>
+  <div class="hike-info">
+    <h3>Sanga to Panauti Trail</h3>
+    <div class="hike-meta">
+      <span><i class="fas fa-clock"></i> 5 hours</span>
+      <span><i class="fas fa-mountain"></i> Moderate</span>
+    </div>
+    <p>Village-to-village hike starting at the Sanga Shiva statue and ending at the ancient town of Panauti.</p>
+    <div class="hike-details">
+      <p><i class="fas fa-map-marker-alt"></i> Bhaktapur/Kavre</p>
+      <p><i class="fas fa-route"></i> 12 km one-way</p>
+    </div>
+    <a href="#" class="btn primary-btn">View Trail</a>
+  </div>
+</div>
+
+
+
+</div></div></div>
+<div id="pagination-controls" style="text-align: center; margin-top: 2rem;">
+  <button id="prev-page" class="filter-btn">Prev</button>
+  <span id="page-indicator">Page 1</span>
+  <button id="next-page" class="filter-btn">Next</button>
+</div>
+
+        <footer>
+            <p>&copy; 2023 Hiking Trails Near Kathmandu. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </footer>
         <script>
+
+            function scrollToCards() {
+  const container = document.getElementById('hike-cards-container');
+  if (container) {
+    container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
             document.addEventListener("DOMContentLoaded", () => {
   const themeToggle = document.getElementById('theme-toggle');
   const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
@@ -250,272 +1591,148 @@
   themeToggle.addEventListener('change', handleThemeToggle);
   if (mobileThemeToggle) mobileThemeToggle.addEventListener('change', handleThemeToggle);
 });
-        </script>
-    </header>
 
-    <main>
-        <section class="hero">
-            <h2>Discover the Best Hiking Trails in Nepal</h2>
-            <p>Explore the natural beauty and cultural heritage of the Kathmandu Valley and beyond.</p>
-        </section>
+const hikeCards = document.querySelectorAll('.hike-card');
+const districtButtons = document.querySelectorAll('.district-btn');
+const difficultyButtons = document.querySelectorAll('.difficulty-btn');
+const paginationContainer = document.getElementById('pagination-controls');
+const resetButton = document.getElementById('reset-filters');
+const noResultsMessage = document.getElementById('no-results');
 
-        <div class="container">
-            <div class="intro">
-                <p>Welcome to our guide on the best hiking trails near Kathmandu! Whether you're a seasoned trekker or a casual hiker, you'll find trails that suit your level of experience and interest. From lush forests to panoramic mountain views, these hikes offer a perfect escape into nature.</p>
-            </div>
-            <div class="hikes-header">
+let selectedDistrict = 'all';
+let selectedDifficulty = 'all';
+let currentPage = 1;
+const cardsPerPage = 12;
 
-                <style>
-                    /* Add to styles.css */
-.hike-card {
-  position: relative;
-  overflow: hidden;
+function getFilteredCards() {
+  return Array.from(hikeCards).filter(card => {
+    const district = card.getAttribute('data-location');
+    const difficulty = card.getAttribute('data-difficulty');
+    return (selectedDistrict === 'all' || district === selectedDistrict) &&
+           (selectedDifficulty === 'all' || difficulty === selectedDifficulty);
+  });
 }
 
-.hike-img::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 40%;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+function showPage(cards, page) {
+  hikeCards.forEach(card => card.style.display = 'none');
+
+  const start = (page - 1) * cardsPerPage;
+  const end = start + cardsPerPage;
+
+  cards.slice(start, end).forEach(card => card.style.display = 'block');
 }
 
-.hike-badge {
-  z-index: 2; /* Ensure badge stays above overlay */
+function updatePagination(filteredCards) {
+  paginationContainer.innerHTML = '';
+
+  const totalPages = Math.ceil(filteredCards.length / cardsPerPage);
+  if (totalPages <= 1) return;
+
+  // Prev
+  const prevBtn = document.createElement('button');
+  prevBtn.innerText = 'Prev';
+  prevBtn.className = 'page-btn';
+  prevBtn.disabled = currentPage === 1;
+  prevBtn.addEventListener('click', () => {
+    if (currentPage > 1) {
+      currentPage--;
+      showPage(filteredCards, currentPage);
+      updatePagination(filteredCards);
+      scrollToCards();
+    }
+  });
+  paginationContainer.appendChild(prevBtn);
+
+  // Page numbers
+  for (let i = 1; i <= totalPages; i++) {
+    const btn = document.createElement('button');
+    btn.className = 'page-btn';
+    btn.innerText = i;
+    if (i === currentPage) btn.classList.add('active');
+    btn.addEventListener('click', () => {
+      currentPage = i;
+      showPage(filteredCards, currentPage);
+      updatePagination(filteredCards);
+      scrollToCards();
+    });
+    paginationContainer.appendChild(btn);
+  }
+
+  // Next
+  const nextBtn = document.createElement('button');
+  nextBtn.innerText = 'Next';
+  nextBtn.className = 'page-btn';
+  nextBtn.disabled = currentPage === totalPages;
+  nextBtn.addEventListener('click', () => {
+    if (currentPage < totalPages) {
+      currentPage++;
+      showPage(filteredCards, currentPage);
+      updatePagination(filteredCards);
+      scrollToCards();
+    }
+  });
+  paginationContainer.appendChild(nextBtn);
 }
-                </style>
- 
- <h2>Hikes Near Kathmandu</h2>
-                <p>Explore the beautiful trails around Kathmandu Valley, perfect for day hikes and weekend getaways</p>
-            </div>
-            
-            <div class="hikes-grid">
-                <div class="hike-card">
-                    <div class="hike-img">
-                        <img src="shivapuri.jpg" alt="Shivapuri National Park">
-                        <div class="hike-badge">Popular</div>
-                    </div>
-                    <div class="hike-info">
-                        <h3>Shivapuri National Park</h3>
-                        <div class="hike-meta">
-                            <span><i class="fas fa-clock"></i> 5-6 hours</span>
-                            <span><i class="fas fa-mountain"></i> Moderate</span>
-                        </div>
-                        <p>Explore lush forests and visit Manichud Daha, offering stunning views of the Kathmandu Valley.</p>
-                        <div class="hike-details">
-                            <p><i class="fas fa-map-marker-alt"></i> North of Kathmandu</p>
-                            <p><i class="fas fa-route"></i> 12 km round trip</p>
-                        </div>
-                        <a href="shivapuri.html" class="btn primary-btn">View Trail</a>
-                    </div>
-                </div>
-                
-                <div class="hike-card">
-                    <div class="hike-img">
-                        <img src="Nagarkot.jpg" alt="Nagarkot Hike">
-                    </div>
-                    <div class="hike-info">
-                        <h3>Nagarkot Sunrise Trek</h3>
-                        <div class="hike-meta">
-                            <span><i class="fas fa-clock"></i> 4-5 hours</span>
-                            <span><i class="fas fa-mountain"></i> Easy to Moderate</span>
-                        </div>
-                        <p>Experience breathtaking sunrise views of the Himalayas from this popular viewpoint.</p>
-                        <div class="hike-details">
-                            <p><i class="fas fa-map-marker-alt"></i> East of Kathmandu</p>
-                            <p><i class="fas fa-route"></i> 8 km round trip</p>
-                        </div>
-                        <a href="nagarkot.html" class="btn primary-btn">View Trail</a>
-                    </div>
-                </div>
-                
-                <div class="hike-card">
-                    <div class="hike-img">
-                        <img src="chandragiri.jpeg" alt="Chandragiri Hills">
-                    </div>
-                    <div class="hike-info">
-                        <h3>Chandragiri Hills</h3>
-                        <div class="hike-meta">
-                            <span><i class="fas fa-clock"></i> 3-4 hours</span>
-                            <span><i class="fas fa-mountain"></i> Moderate</span>
-                        </div>
-                        <p>Hike to the summit for panoramic views of Kathmandu Valley and the Himalayan range.</p>
-                        <div class="hike-details">
-                            <p><i class="fas fa-map-marker-alt"></i> Southwest of Kathmandu</p>
-                            <p><i class="fas fa-route"></i> 7 km one way</p>
-                        </div>
-                        <a href="#" class="btn primary-btn">View Trail</a>
-                    </div>
-                </div>
-                
-                <div class="hike-card">
-                    <div class="hike-img">
-                        <img src="phulchoki.jpg" alt="Phulchowki Hill">
-                        <div class="hike-badge">New</div>
-                    </div>
-                    <div class="hike-info">
-                        <h3>Phulchowki Hill</h3>
-                        <div class="hike-meta">
-                            <span><i class="fas fa-clock"></i> 6-7 hours</span>
-                            <span><i class="fas fa-mountain"></i> Challenging</span>
-                        </div>
-                        <p>The highest hill around Kathmandu Valley, offering rich biodiversity and mountain views.</p>
-                        <div class="hike-details">
-                            <p><i class="fas fa-map-marker-alt"></i> South of Kathmandu</p>
-                            <p><i class="fas fa-route"></i> 14 km round trip</p>
-                        </div>
-                        <a href="#" class="btn primary-btn">View Trail</a>
-                    </div>
-                </div>
-                
-                <div class="hike-card">
-                    <div class="hike-img">
-                        <img src="ranikot.jpg" alt="Ranikot">
-                    </div>
-                    <div class="hike-info">
-                        <h3>Ranikot, Bhaktapur</h3>
-                        <div class="hike-meta">
-                            <span><i class="fas fa-clock"></i> 4-5 hours</span>
-                            <span><i class="fas fa-mountain"></i> Easy</span>
-                        </div>
-                        <p>A historical fort with beautiful surroundings and cultural significance.</p>
-                        <div class="hike-details">
-                            <p><i class="fas fa-map-marker-alt"></i> Bhaktapur</p>
-                            <p><i class="fas fa-route"></i> 6 km round trip</p>
-                        </div>
-                        <a href="#" class="btn primary-btn">View Trail</a>
-                    </div>
-                </div>
-                
-                <div class="hike-card">
-                    <div class="hike-img">
-                        <img src="Hiking Image 8.jpeg" alt="Rani Jhula">
-                    </div>
-                    <div class="hike-info">
-                        <h3>Rani Jhula, Bhaktapur</h3>
-                        <div class="hike-meta">
-                            <span><i class="fas fa-clock"></i> 3-4 hours</span>
-                            <span><i class="fas fa-mountain"></i> Easy</span>
-                        </div>
-                        <p>A scenic trail with beautiful suspension bridges and riverside views.</p>
-                        <div class="hike-details">
-                            <p><i class="fas fa-map-marker-alt"></i> Bhaktapur</p>
-                            <p><i class="fas fa-route"></i> 5 km round trip</p>
-                        </div>
-                        <a href="#" class="btn primary-btn">View Trail</a>
-                    </div>
-                </div>
-            </div>
-            
- 
- <div class="hike-card">
-                    <div class="hike-img">
-                        <img src="https://source.unsplash.com/random/600x400/?champadevi,temple,nepal" alt="Champadevi Hill">
-                    </div>
-                    <div class="hike-info">
-                        <h3>Champadevi Hill</h3>
-                        <div class="hike-meta">
-                            <span><i class="fas fa-clock"></i> 4-5 hours</span>
-                            <span><i class="fas fa-mountain"></i> Moderate</span>
-                        </div>
-                        <p>Sacred hill with temple offering panoramic views of Kathmandu Valley and Himalayas.</p>
-                        <div class="hike-details">
-                            <p><i class="fas fa-map-marker-alt"></i> Southwest of Kathmandu</p>
-                            <p><i class="fas fa-route"></i> 10 km round trip</p>
-                        </div>
-                        <a href="trails/champadevi.html" class="btn primary-btn">View Trail</a>
-                    </div>
-                </div>
-                
-                <div class="hike-card">
-                    <div class="hike-img">
-                        <img src="https://source.unsplash.com/random/600x400/?nagarjun,forest,nepal" alt="Nagarjun Forest">
-                    </div>
-                    <div class="hike-info">
-                        <h3>Nagarjun Forest Reserve</h3>
-                        <div class="hike-meta">
-                            <span><i class="fas fa-clock"></i> 3-4 hours</span>
-                            <span><i class="fas fa-mountain"></i> Easy to Moderate</span>
-                        </div>
-                        <p>Peaceful forest hike with Buddhist monasteries and wildlife spotting opportunities.</p>
-                        <div class="hike-details">
-                            <p><i class="fas fa-map-marker-alt"></i> Northwest of Kathmandu</p>
-                            <p><i class="fas fa-route"></i> 8 km round trip</p>
-                        </div>
-                        <a href="trails/nagarjun.html" class="btn primary-btn">View Trail</a>
-                    </div>
-                </div>
-                
-                <div class="hike-card">
-                    <div class="hike-img">
-                        <img src="https://source.unsplash.com/random/600x400/?chisapani,village,nepal" alt="Chisapani">
-                    </div>
-                    <div class="hike-info">
-                        <h3>Sundarijal to Chisapani</h3>
-                        <div class="hike-meta">
-                            <span><i class="fas fa-clock"></i> 5-6 hours</span>
-                            <span><i class="fas fa-mountain"></i> Moderate</span>
-                        </div>
-                        <p>Classic trek through Shivapuri National Park to the charming village of Chisapani.</p>
-                        <div class="hike-details">
-                            <p><i class="fas fa-map-marker-alt"></i> Northeast of Kathmandu</p>
-                            <p><i class="fas fa-route"></i> 15 km one way</p>
-                        </div>
-                        <a href="trails/chisapani.html" class="btn primary-btn">View Trail</a>
-                    </div>
-                </div>
-                
-                <div class="hike-card">
-                    <div class="hike-img">
-                        <img src="https://source.unsplash.com/random/600x400/?kakani,village,nepal" alt="Kakani">
-                    </div>
-                    <div class="hike-info">
-                        <h3>Kakani Hill Station</h3>
-                        <div class="hike-meta">
-                            <span><i class="fas fa-clock"></i> 4-5 hours</span>
-                            <span><i class="fas fa-mountain"></i> Easy to Moderate</span>
-                        </div>
-                        <p>Scenic hill station with strawberry farms and stunning Himalayan views.</p>
-                        <div class="hike-details">
-                            <p><i class="fas fa-map-marker-alt"></i> Northwest of Kathmandu</p>
-                            <p><i class="fas fa-route"></i> 12 km round trip</p>
-                        </div>
-                        <a href="trails/kakani.html" class="btn primary-btn">View Trail</a>
-                    </div>
-                </div>
-                
-                <div class="hike-card">
-                    <div class="hike-img">
-                        <img src="https://source.unsplash.com/random/600x400/?dhulikhel,sunrise,nepal" alt="Dhulikhel">
-                    </div>
-                    <div class="hike-info">
-                        <h3>Dhulikhel Sunrise Point</h3>
-                        <div class="hike-meta">
-                            <span><i class="fas fa-clock"></i> 3-4 hours</span>
-                            <span><i class="fas fa-mountain"></i> Easy</span>
-                        </div>
-                        <p>Ancient Newari town with spectacular sunrise views and cultural heritage.</p>
-                        <div class="hike-details">
-                            <p><i class="fas fa-map-marker-alt"></i> East of Kathmandu</p>
-                            <p><i class="fas fa-route"></i> 6 km round trip</p>
-                        </div>
-                        <a href="trails/dhulikhel.html" class="btn primary-btn">View Trail</a>
-                    </div>
-                </div>
-            </div>
-        
-        <footer>
-            <p>&copy; 2023 Hiking Trails Near Kathmandu. All rights reserved.</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
-        </footer>
-    </main>
+
+function filterAndPaginate() {
+  const filtered = getFilteredCards();
+  currentPage = 1;
+
+  if (filtered.length === 0) {
+    hikeCards.forEach(card => card.style.display = 'none');
+    paginationContainer.innerHTML = '';
+    noResultsMessage.style.display = 'block';
+    return;
+  }
+
+  noResultsMessage.style.display = 'none';
+  showPage(filtered, currentPage);
+  updatePagination(filtered);
+}
+
+// District filter
+districtButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    districtButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    selectedDistrict = btn.getAttribute('data-location');
+    filterAndPaginate();
+  });
+});
+
+// Difficulty filter
+difficultyButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    difficultyButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    selectedDifficulty = btn.getAttribute('data-difficulty');
+    filterAndPaginate();
+  });
+});
+
+// Reset filter
+resetButton.addEventListener('click', () => {
+  selectedDistrict = 'all';
+  selectedDifficulty = 'all';
+  currentPage = 1;
+
+  districtButtons.forEach(btn => {
+    btn.classList.remove('active');
+    if (btn.getAttribute('data-location') === 'all') btn.classList.add('active');
+  });
+
+  difficultyButtons.forEach(btn => {
+    btn.classList.remove('active');
+    if (btn.getAttribute('data-difficulty') === 'all') btn.classList.add('active');
+  });
+
+  filterAndPaginate();
+});
+
+// Init
+filterAndPaginate();
+
+</script>
     <script src="script.js"></script>
 </body>
 </html>
