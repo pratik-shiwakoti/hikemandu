@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Hiking Tips & Adventure Stories | Hikemandu</title>
+    <meta name="description" content="Discover hiking tips, trail reviews, and adventure stories from Nepal's most experienced trekkers. Get expert advice for your next mountain adventure.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo.JPG-tagGC2VfWtKTZd6VSr2RNHtcWy3Foc.jpeg" alt="Hikemandu Logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    
+                    <!-- Valley Hikes Dropdown -->
+                    <li class="dropdown">
+                        <a href="index.html#kathmandu-hikes" class="dropdown-toggle">
+                            Valley Hikes <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="kathmandu.html">Kathmandu</a></li>
+                            <li><a href="lalitpur.html">Lalitpur</a></li>
+                            <li><a href="bhaktapur.html">Bhaktapur</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a href="shivapuri.html">Shivapuri National Park</a></li>
+                            <li><a href="nagarkot.html">Nagarkot Sunrise Trek</a></li>
+                            <li><a href="chandragiri.html">Chandragiri Hills</a></li>
+                            <li><a href="phulchowki.html">Phulchowki Hill</a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Destinations Dropdown -->
+                    <li class="dropdown">
+                        <a href="index.html#destinations" class="dropdown-toggle">
+                            Destinations <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="all_hike.html">Hiking Trails</a></li>
+                            <li><a href="index.html#destinations">Popular Treks</a></li>
+                            <li><a href="picnic-spots.html">Picnic Spots</a></li>
+                            <li><a href="bike-tours.html">Bike Tours</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a href="everest.html">Everest Base Camp</a></li>
+                            <li><a href="annapurna.html">Annapurna Circuit</a></li>
+                            <li><a href="langtang.html">Langtang Valley</a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Gallery Dropdown -->
+                    <li class="dropdown">
+                        <a href="index.html#gallery" class="dropdown-toggle">
+                            Gallery <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="galleries.html">Trail Photos</a></li>
+                            <li><a href="gallery.html#landscapes">Landscapes</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a href="gallery.html#events">Event Photos</a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Services Dropdown -->
+                    <li class="dropdown">
+                        <a href="#services" class="dropdown-toggle">
+                            Services <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="guided-tours.html">Guided Tours</a></li>
+                            <li><a href="equipment-rental.html">Equipment Rental</a></li>
+                            <li><a href="enquiries.html">Enquiry</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a href="custom-packages.html">Custom Packages</a></li>
+                            <li><a href="group-bookings.html">Group Bookings</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                    
+                    <!-- About Us Dropdown -->
+                    <li class="dropdown">
+                        <a href="index.html#about" class="dropdown-toggle">
+                            About Us <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html#about">Our Story</a></li>
+                            <li><a href="team.html">Our Team</a></li>
+                            <li><a href="mission.html">Mission & Vision</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a href="index.html#testimonials">Testimonials</a></li>
+                            <li><a href="terms.html">Terms & Conditions</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                
+                <div class="search-container">
+                    <button class="search-btn" title="Search blog posts" aria-label="Search blog">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+
+                <div class="theme-toggle-wrapper">
+                    <input type="checkbox" id="theme-toggle" class="theme-toggle">
+                    <label for="theme-toggle" class="theme-toggle-label">
+                        <div class="theme-toggle-thumb"></div>
+                        <div class="theme-toggle-icons">
+                            <i class="fas fa-sun sun"></i>
+                            <i class="fas fa-moon moon"></i>
+                        </div>
+                    </label>
+                </div>
+
+                <button class="book-btn">Book a Trek</button>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Blog Hero Section -->
+    <section class="blog-hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="blog-hero-content">
+                <h1>Hikemandu Blog</h1>
+                <p>Discover hiking tips, trail reviews, and adventure stories from Nepal's mountains</p>
+                <div class="blog-search-bar">
+                    <input type="text" placeholder="Search articles..." class="blog-search-input">
+                    <button class="blog-search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Categories -->
+    <section class="blog-categories">
+        <div class="container">
+            <div class="category-filters">
+                <button class="category-btn active" data-category="all">All Posts</button>
+                <button class="category-btn" data-category="tips">Hiking Tips</button>
+                <button class="category-btn" data-category="reviews">Trail Reviews</button>
+                <button class="category-btn" data-category="stories">Adventure Stories</button>
+                <button class="category-btn" data-category="gear">Gear Reviews</button>
+                <button class="category-btn" data-category="safety">Safety</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Post -->
+    <section class="featured-post">
+        <div class="container">
+            <div class="featured-post-card">
+                <div class="featured-post-image">
+                    <img src="https://source.unsplash.com/random/800x400/?everest,basecamp" alt="Everest Base Camp Trek">
+                    <div class="featured-badge">Featured</div>
+                </div>
+                <div class="featured-post-content">
+                    <div class="post-meta">
+                        <span class="post-category stories">Adventure Stories</span>
+                        <span class="post-date">December 15, 2024</span>
+                    </div>
+                    <h2>My Journey to Everest Base Camp: A Life-Changing Adventure</h2>
+                    <p>After months of preparation and training, I finally embarked on the trek of a lifetime to Everest Base Camp. Here's my complete experience, from the bustling streets of Kathmandu to the breathtaking views at 5,364 meters...</p>
+                    <div class="post-author">
+                        <img src="https://source.unsplash.com/random/50x50/?portrait,man" alt="Pratik Shiwakoti">
+                        <div class="author-info">
+                            <span class="author-name">Pratik Shiwakoti</span>
+                            <span class="author-title">Founder, Hikemandu</span>
+                        </div>
+                    </div>
+                    <a href="blog-everest.html" class="btn primary-btn">Read Full Story</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts Grid -->
+    <section class="blog-posts">
+        <div class="container">
+            <div class="blog-grid">
+                <!-- Hiking Tips Posts -->
+                <article class="blog-card tips" data-category="tips">
+                    <div class="blog-card-image">
+                        <img src="https://source.unsplash.com/random/400x250/?hiking,boots" alt="Essential Hiking Gear">
+                        <div class="post-category-badge tips">Hiking Tips</div>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="post-meta">
+                            <span class="post-date">December 10, 2024</span>
+                            <span class="read-time">5 min read</span>
+                        </div>
+                        <h3>Essential Gear for Kathmandu Valley Hikes</h3>
+                        <p>A comprehensive guide to the must-have equipment for day hikes around Kathmandu Valley. From proper footwear to emergency supplies...</p>
+                        <div class="post-tags">
+                            <span class="tag">Gear</span>
+                            <span class="tag">Beginner</span>
+                            <span class="tag">Day Hikes</span>
+                        </div>
+                        <a href="blog-post-gear.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card reviews" data-category="reviews">
+                    <div class="blog-card-image">
+                        <img src="https://source.unsplash.com/random/400x250/?shivapuri,forest" alt="Shivapuri Trail Review">
+                        <div class="post-category-badge reviews">Trail Reviews</div>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="post-meta">
+                            <span class="post-date">December 8, 2024</span>
+                            <span class="read-time">7 min read</span>
+                        </div>
+                        <h3>Shivapuri National Park: Complete Trail Review</h3>
+                        <p>An in-depth review of the Shivapuri trail including difficulty level, best routes, scenic viewpoints, and what to expect...</p>
+                        <div class="post-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-text">5/5 - Excellent</span>
+                        </div>
+                        <div class="post-tags">
+                            <span class="tag">Moderate</span>
+                            <span class="tag">Forest</span>
+                            <span class="tag">Day Hike</span>
+                        </div>
+                        <a href="blog-post-shivapuri-review.html" class="read-more">Read Review <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card tips" data-category="tips">
+                    <div class="blog-card-image">
+                        <img src="https://source.unsplash.com/random/400x250/?mountain,weather" alt="Weather Safety">
+                        <div class="post-category-badge tips">Hiking Tips</div>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="post-meta">
+                            <span class="post-date">December 5, 2024</span>
+                            <span class="read-time">6 min read</span>
+                        </div>
+                        <h3>Reading Weather Patterns in the Himalayas</h3>
+                        <p>Learn how to interpret weather signs and make safe decisions while hiking in Nepal's unpredictable mountain weather...</p>
+                        <div class="post-tags">
+                            <span class="tag">Safety</span>
+                            <span class="tag">Weather</span>
+                            <span class="tag">Advanced</span>
+                        </div>
+                        <a href="blog-post-weather.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card stories" data-category="stories">
+                    <div class="blog-card-image">
+                        <img src="https://source.unsplash.com/random/400x250/?nagarkot,sunrise" alt="Nagarkot Sunrise">
+                        <div class="post-category-badge stories">Adventure Stories</div>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="post-meta">
+                            <span class="post-date">December 3, 2024</span>
+                            <span class="read-time">4 min read</span>
+                        </div>
+                        <h3>Chasing Sunrise at Nagarkot: A Photographer's Dream</h3>
+                        <p>The story of an early morning trek to capture the perfect sunrise over the Himalayas from Nagarkot viewpoint...</p>
+                        <div class="post-tags">
+                            <span class="tag">Photography</span>
+                            <span class="tag">Sunrise</span>
+                            <span class="tag">Easy</span>
+                        </div>
+                        <a href="blog-post-nagarkot-sunrise.html" class="read-more">Read Story <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card gear" data-category="gear">
+                    <div class="blog-card-image">
+                        <img src="https://source.unsplash.com/random/400x250/?backpack,hiking" alt="Hiking Backpack Review">
+                        <div class="post-category-badge gear">Gear Reviews</div>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="post-meta">
+                            <span class="post-date">November 30, 2024</span>
+                            <span class="read-time">8 min read</span>
+                        </div>
+                        <h3>Best Hiking Backpacks for Nepal Treks 2024</h3>
+                        <p>Comprehensive review of the top hiking backpacks tested on Nepal's trails. Find the perfect pack for your next adventure...</p>
+                        <div class="post-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-text">4/5 - Very Good</span>
+                        </div>
+                        <div class="post-tags">
+                            <span class="tag">Gear</span>
+                            <span class="tag">Review</span>
+                            <span class="tag">Backpacks</span>
+                        </div>
+                        <a href="blog-post-backpacks.html" class="read-more">Read Review <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card safety" data-category="safety">
+                    <div class="blog-card-image">
+                        <img src="https://source.unsplash.com/random/400x250/?first,aid,mountain" alt="Mountain Safety">
+                        <div class="post-category-badge safety">Safety</div>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="post-meta">
+                            <span class="post-date">November 28, 2024</span>
+                            <span class="read-time">10 min read</span>
+                        </div>
+                        <h3>Mountain First Aid: Essential Skills for Hikers</h3>
+                        <p>Learn crucial first aid techniques that could save lives on the trail. From altitude sickness to injury management...</p>
+                        <div class="post-tags">
+                            <span class="tag">First Aid</span>
+                            <span class="tag">Safety</span>
+                            <span class="tag">Emergency</span>
+                        </div>
+                        <a href="blog-post-first-aid.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card reviews" data-category="reviews">
+                    <div class="blog-card-image">
+                        <img src="https://source.unsplash.com/random/400x250/?chandragiri,hills" alt="Chandragiri Hills">
+                        <div class="post-category-badge reviews">Trail Reviews</div>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="post-meta">
+                            <span class="post-date">November 25, 2024</span>
+                            <span class="read-time">6 min read</span>
+                        </div>
+                        <h3>Chandragiri Hills: Cable Car vs Hiking Trail</h3>
+                        <p>Comparing the cable car experience with the hiking trail to Chandragiri Hills. Which option gives you the best value...</p>
+                        <div class="post-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-text">4/5 - Good</span>
+                        </div>
+                        <div class="post-tags">
+                            <span class="tag">Cable Car</span>
+                            <span class="tag">Views</span>
+                            <span class="tag">Moderate</span>
+                        </div>
+                        <a href="blog-post-chandragiri.html" class="read-more">Read Review <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card tips" data-category="tips">
+                    <div class="blog-card-image">
+                        <img src="https://source.unsplash.com/random/400x250/?training,fitness" alt="Fitness Training">
+                        <div class="post-category-badge tips">Hiking Tips</div>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="post-meta">
+                            <span class="post-date">November 22, 2024</span>
+                            <span class="read-time">12 min read</span>
+                        </div>
+                        <h3>12-Week Training Plan for Everest Base Camp</h3>
+                        <p>A comprehensive fitness program designed to prepare your body for the demands of high-altitude trekking...</p>
+                        <div class="post-tags">
+                            <span class="tag">Training</span>
+                            <span class="tag">Fitness</span>
+                            <span class="tag">EBC</span>
+                        </div>
+                        <a href="blog-post-training.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card stories" data-category="stories">
+                    <div class="blog-card-image">
+                        <img src="https://source.unsplash.com/random/400x250/?monsoon,rain,hiking" alt="Monsoon Hiking">
+                        <div class="post-category-badge stories">Adventure Stories</div>
+                    </div>
+                    <div class="blog-card-content">
+                        <div class="post-meta">
+                            <span class="post-date">November 20, 2024</span>
+                            <span class="read-time">5 min read</span>
+                        </div>
+                        <h3>Caught in Monsoon: A Lesson in Preparedness</h3>
+                        <p>What started as a simple day hike turned into an adventure when unexpected monsoon rains hit. Here's what I learned...</p>
+                        <div class="post-tags">
+                            <span class="tag">Monsoon</span>
+                            <span class="tag">Weather</span>
+                            <span class="tag">Lessons</span>
+                        </div>
+                        <a href="blog-post-monsoon.html" class="read-more">Read Story <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-container">
+                <button class="btn outline-btn load-more-btn">
+                    Load More Posts <i class="fas fa-arrow-down"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="blog-newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h3>Stay Updated with Our Latest Adventures</h3>
+                    <p>Get weekly hiking tips, trail reviews, and adventure stories delivered to your inbox</p>
+                </div>
+                <form class="newsletter-signup">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn primary-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Tags -->
+    <section class="popular-tags">
+        <div class="container">
+            <h3>Popular Tags</h3>
+            <div class="tags-cloud">
+                <a href="#" class="tag-link" data-tag="beginner">Beginner</a>
+                <a href="#" class="tag-link" data-tag="day-hikes">Day Hikes</a>
+                <a href="#" class="tag-link" data-tag="gear">Gear</a>
+                <a href="#" class="tag-link" data-tag="safety">Safety</a>
+                <a href="#" class="tag-link" data-tag="photography">Photography</a>
+                <a href="#" class="tag-link" data-tag="everest">Everest</a>
+                <a href="#" class="tag-link" data-tag="annapurna">Annapurna</a>
+                <a href="#" class="tag-link" data-tag="kathmandu-valley">Kathmandu Valley</a>
+                <a href="#" class="tag-link" data-tag="monsoon">Monsoon</a>
+                <a href="#" class="tag-link" data-tag="training">Training</a>
+                <a href="#" class="tag-link" data-tag="altitude">Altitude</a>
+                <a href="#" class="tag-link" data-tag="weather">Weather</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo.JPG-tagGC2VfWtKTZd6VSr2RNHtcWy3Foc.jpeg" alt="Hikemandu Logo" class="footer-logo-img">
+                </div>
+                <div class="footer-nav">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#kathmandu-hikes">Kathmandu Hikes</a></li>
+                        <li><a href="index.html#destinations">Popular Treks</a></li>
+                        <li><a href="index.html#gallery">Gallery</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i>Suryabinayak, Bhaktapur, Nepal</p>
+                    <p><i class="fas fa-phone"></i> +977 9813092717</p>
+                    <p><i class="fas fa-envelope"></i> pratikshiwakoti105@gmail.com</p>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Subscribe to Our Newsletter</h4>
+                    <p>Get updates on new treks and special offers</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; <span id="year"></span> Hikemandu. All rights reserved.
+                </div>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="sitemap.html">Sitemap</a>
+                </div>
+            </div>
+            <div class="footer-credit">
+                <p>Designed By Pratik Shiwakoti</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="blog.js"></script>
+</body>
+</html>

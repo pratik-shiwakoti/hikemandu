@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike Tours - Hikemandu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.JPG" alt="Hikemandu Logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#kathmandu-hikes">Valley Hikes</a></li>
+                    <li><a href="index.html#destinations">Destinations</a></li>
+                    <li><a href="index.html#gallery">Gallery</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="theme-toggle-wrapper">
+                    <input type="checkbox" id="theme-toggle" class="theme-toggle">
+                    <label for="theme-toggle" class="theme-toggle-label">
+                        <div class="theme-toggle-thumb"></div>
+                        <div class="theme-toggle-icons">
+                            <i class="fas fa-sun sun"></i>
+                            <i class="fas fa-moon moon"></i>
+                        </div>
+                    </label>
+                </div>
+                <button class="book-btn">Book a Trek</button>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/1920x1080/?cycling,mountains') no-repeat center center/cover;">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-tagline">CYCLING ADVENTURES</p>
+            <h1>Bike Tours Around Kathmandu</h1>
+            <p>Explore the valley on two wheels with our guided cycling tours</p>
+        </div>
+    </section>
+
+    <section class="destinations">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">CYCLING ROUTES</span>
+                <h2>Popular Bike Tour Destinations</h2>
+                <p>Discover scenic routes and cultural sites on our carefully planned cycling tours</p>
+            </div>
+            
+            <div class="destination-grid">
+                <div class="destination-card">
+                    <div class="destination-img">
+                        <img src="https://source.unsplash.com/600x400/?cycling,city" alt="Kathmandu City Tour">
+                    </div>
+                    <div class="destination-info">
+                        <h3>Kathmandu City Heritage Tour</h3>
+                        <div class="destination-details">
+                            <p><i class="fas fa-route"></i> 15 km circuit</p>
+                            <p><i class="fas fa-clock"></i> 4-5 hours</p>
+                            <p><i class="fas fa-signal"></i> Easy to Moderate</p>
+                            <p><i class="fas fa-users"></i> Cultural exploration</p>
+                        </div>
+                        <p>Cycle through historic Durbar Squares, ancient temples, and bustling markets of Kathmandu's cultural heart.</p>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="destination-img">
+                        <img src="https://source.unsplash.com/600x400/?cycling,village" alt="Bhaktapur Cycling">
+                    </div>
+                    <div class="destination-info">
+                        <h3>Bhaktapur Medieval City Tour</h3>
+                        <div class="destination-details">
+                            <p><i class="fas fa-route"></i> 20 km round trip</p>
+                            <p><i class="fas fa-clock"></i> 6-7 hours</p>
+                            <p><i class="fas fa-signal"></i> Moderate</p>
+                            <p><i class="fas fa-users"></i> Historical & cultural</p>
+                        </div>
+                        <p>Ride through traditional Newari villages and explore the well-preserved medieval city of Bhaktapur.</p>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="destination-img">
+                        <img src="https://source.unsplash.com/600x400/?cycling,sunrise" alt="Nagarkot Cycling">
+                    </div>
+                    <div class="destination-info">
+                        <h3>Nagarkot Sunrise Cycling</h3>
+                        <div class="destination-details">
+                            <p><i class="fas fa-route"></i> 35 km one way</p>
+                            <p><i class="fas fa-clock"></i> 8-10 hours</p>
+                            <p><i class="fas fa-signal"></i> Challenging</p>
+                            <p><i class="fas fa-users"></i> Mountain views</p>
+                        </div>
+                        <p>Early morning ride to Nagarkot for spectacular sunrise views over the Himalayas and Kathmandu Valley.</p>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="destination-img">
+                        <img src="https://source.unsplash.com/600x400/?cycling,forest" alt="Shivapuri Cycling">
+                    </div>
+                    <div class="destination-info">
+                        <h3>Shivapuri National Park Trail</h3>
+                        <div class="destination-details">
+                            <p><i class="fas fa-route"></i> 25 km circuit</p>
+                            <p><i class="fas fa-clock"></i> 6-8 hours</p>
+                            <p><i class="fas fa-signal"></i> Challenging</p>
+                            <p><i class="fas fa-users"></i> Nature & wildlife</p>
+                        </div>
+                        <p>Mountain biking through pristine forests, wildlife spotting, and challenging uphill climbs in Shivapuri.</p>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="destination-img">
+                        <img src="https://source.unsplash.com/600x400/?cycling,river" alt="Riverside Cycling">
+                    </div>
+                    <div class="destination-info">
+                        <h3>Bagmati Riverside Circuit</h3>
+                        <div class="destination-details">
+                            <p><i class="fas fa-route"></i> 18 km circuit</p>
+                            <p><i class="fas fa-clock"></i> 3-4 hours</p>
+                            <p><i class="fas fa-signal"></i> Easy</p>
+                            <p><i class="fas fa-users"></i> Scenic & relaxing</p>
+                        </div>
+                        <p>Peaceful ride along the Bagmati River with stops at temples, parks, and local communities.</p>
+                    </div>
+                </div>
+
+                <div class="destination-card">
+                    <div class="destination-img">
+                        <img src="https://source.unsplash.com/600x400/?cycling,hills" alt="Chandragiri Cycling">
+                    </div>
+                    <div class="destination-info">
+                        <h3>Chandragiri Hills Adventure</h3>
+                        <div class="destination-details">
+                            <p><i class="fas fa-route"></i> 30 km round trip</p>
+                            <p><i class="fas fa-clock"></i> 7-9 hours</p>
+                            <p><i class="fas fa-signal"></i> Very Challenging</p>
+                            <p><i class="fas fa-users"></i> Extreme adventure</p>
+                        </div>
+                        <p>Ultimate cycling challenge to Chandragiri Hills with steep climbs and rewarding panoramic valley views.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" style="background-color: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">CYCLING ESSENTIALS</span>
+                <h2>What We Provide & What to Bring</h2>
+                <p>Everything you need to know for a safe and enjoyable cycling experience</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>What We Provide:</h3>
+                    <ul style="list-style: disc; margin-left: 2rem; margin-bottom: 2rem;">
+                        <li>High-quality mountain bikes and city bikes</li>
+                        <li>Safety helmets and protective gear</li>
+                        <li>Professional cycling guides</li>
+                        <li>Basic repair tools and spare parts</li>
+                        <li>First aid kit and emergency support</li>
+                        <li>Route maps and cultural information</li>
+                    </ul>
+                    
+                    <h3>What to Bring:</h3>
+                    <ul style="list-style: disc; margin-left: 2rem; margin-bottom: 2rem;">
+                        <li>Comfortable cycling clothes</li>
+                        <li>Water bottle (minimum 1 liter)</li>
+                        <li>Sunscreen and sunglasses</li>
+                        <li>Light snacks and energy bars</li>
+                        <li>Camera for capturing memories</li>
+                        <li>Valid ID and emergency contacts</li>
+                    </ul>
+                </div>
+                
+                <div class="about-text">
+                    <h3>Safety Guidelines:</h3>
+                    <ul style="list-style: disc; margin-left: 2rem; margin-bottom: 2rem;">
+                        <li>Always wear provided helmets</li>
+                        <li>Follow traffic rules and guide instructions</li>
+                        <li>Stay hydrated throughout the tour</li>
+                        <li>Inform guide of any health conditions</li>
+                        <li>Maintain safe distance from other cyclists</li>
+                        <li>Use hand signals for turns and stops</li>
+                    </ul>
+                    
+                    <h3>Booking Information:</h3>
+                    <ul style="list-style: disc; margin-left: 2rem;">
+                        <li>Advance booking recommended</li>
+                        <li>Group discounts available</li>
+                        <li>Custom routes can be arranged</li>
+                        <li>Weather-dependent cancellation policy</li>
+                        <li>Age limit: 12+ years</li>
+                        <li>Contact: +977 9813092717</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="logo.JPG" alt="Hikemandu Logo" class="footer-logo-img">
+                </div>
+                <div class="footer-nav">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#kathmandu-hikes">Valley Hikes</a></li>
+                        <li><a href="index.html#destinations">Destinations</a></li>
+                        <li><a href="index.html#gallery">Gallery</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i>Suryabinayak, Bhaktapur, Nepal</p>
+                    <p><i class="fas fa-phone"></i> +977 9813092717</p>
+                    <p><i class="fas fa-envelope"></i> pratikshiwakoti105@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; <span id="year"></span> Hikemandu. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

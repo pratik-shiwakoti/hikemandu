@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trekking Destinations - Hikemandu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="search.css">
+    <link rel="stylesheet" href="trekking-destinations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo.JPG-tagGC2VfWtKTZd6VSr2RNHtcWy3Foc.jpeg" alt="Hikemandu Logo">
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    
+                    <!-- Valley Hikes Dropdown -->
+                    <li class="dropdown">
+                        <a href="#kathmandu-hikes" class="dropdown-toggle">
+                            Valley Hikes <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="kathmandu.html">Kathmandu</a></li>
+                            <li><a href="lalitpur.html">Lalitpur</a></li>
+                            <li><a href="bhaktapur.html">Bhaktapur</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a href="shivapuri.html">Shivapuri National Park</a></li>
+                            <li><a href="nagarkot.html">Nagarkot Sunrise Trek</a></li>
+                            <li><a href="chandragiri.html">Chandragiri Hills</a></li>
+                            <li><a href="phulchowki.html">Phulchowki Hill</a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Destinations Dropdown -->
+                    <li class="dropdown">
+                        <a href="trekking-destinations.html" class="dropdown-toggle">
+                            Destinations <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="all_hike.html">Hiking Trails</a></li>
+                            <li><a href="trekking-destinations.html">Popular Treks</a></li>
+                            <li><a href="picnic-spots.html">Picnic Spots</a></li>
+                            <li><a href="bike-tours.html">Bike Ride</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a href="everest.html">Everest Base Camp</a></li>
+                            <li><a href="annapurna.html">Annapurna Circuit</a></li>
+                            <li><a href="langtang.html">Langtang Valley</a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Gallery Dropdown -->
+                    <li class="dropdown">
+                        <a href="#gallery" class="dropdown-toggle">
+                            Gallery <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="galleries.html">Trail Photos</a></li>
+                            <li><a href="gallery.html#landscapes">Landscapes</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a href="gallery.html#events">Event Photos</a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Services Dropdown -->
+                    <li class="dropdown">
+                        <a href="#services" class="dropdown-toggle">
+                            Services <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="guided-tours.html">Guided Tours</a></li>
+                            <li><a href="equipment-rental.html">Equipment Rental</a></li>
+                            <li><a href="enquiries.html">Enquiry</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a href="custom-packages.html">Custom Packages</a></li>
+                            <li><a href="group-bookings.html">Group Bookings</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="#faq">FAQ</a></li>
+                    
+                    <!-- About Us Dropdown -->
+                    <li class="dropdown">
+                        <a href="#about" class="dropdown-toggle">
+                            About Us <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#about">Our Story</a></li>
+                            <li><a href="team.html">Our Team</a></li>
+                            <li><a href="mission.html">Mission & Vision</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a href="#testimonials">Testimonials</a></li>
+                            <li><a href="terms.html">Terms and Conditions</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                
+                <div class="search-container">
+                    <button class="search-btn" title="Search (Ctrl+K)" aria-label="Open search">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+
+                <div class="theme-toggle-wrapper">
+                    <input type="checkbox" id="theme-toggle" class="theme-toggle">
+                    <label for="theme-toggle" class="theme-toggle-label">
+                        <div class="theme-toggle-thumb"></div>
+                        <div class="theme-toggle-icons">
+                            <i class="fas fa-sun sun"></i>
+                            <i class="fas fa-moon moon"></i>
+                        </div>
+                    </label>
+                </div>
+
+                <button class="book-btn">Book a Trek</button>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="destinations-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="container">
+                <nav class="breadcrumbs">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <span>Trekking Destinations</span>
+                </nav>
+                <h1>Epic Trekking Destinations</h1>
+                <p>Discover Nepal's most spectacular trekking routes, from the world-famous Everest Base Camp to hidden gems in remote valleys</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Destinations</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Happy Trekkers</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">8848m</span>
+                        <span class="stat-label">Highest Peak</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="destinations-filter">
+        <div class="container">
+            <div class="filter-controls">
+                <div class="filter-group">
+                    <label>Region:</label>
+                    <select id="region-filter">
+                        <option value="all">All Regions</option>
+                        <option value="everest">Everest Region</option>
+                        <option value="annapurna">Annapurna Region</option>
+                        <option value="langtang">Langtang Region</option>
+                        <option value="manaslu">Manaslu Region</option>
+                        <option value="dolpo">Dolpo Region</option>
+                        <option value="mustang">Mustang Region</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Difficulty:</label>
+                    <select id="difficulty-filter">
+                        <option value="all">All Levels</option>
+                        <option value="easy">Easy</option>
+                        <option value="moderate">Moderate</option>
+                        <option value="challenging">Challenging</option>
+                        <option value="extreme">Extreme</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Duration:</label>
+                    <select id="duration-filter">
+                        <option value="all">Any Duration</option>
+                        <option value="short">1-7 days</option>
+                        <option value="medium">8-14 days</option>
+                        <option value="long">15-21 days</option>
+                        <option value="extended">22+ days</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Season:</label>
+                    <select id="season-filter">
+                        <option value="all">All Seasons</option>
+                        <option value="spring">Spring (Mar-May)</option>
+                        <option value="autumn">Autumn (Sep-Nov)</option>
+                        <option value="winter">Winter (Dec-Feb)</option>
+                        <option value="monsoon">Monsoon (Jun-Aug)</option>
+                    </select>
+                </div>
+                <button class="clear-filters-btn">Clear All</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Destinations -->
+    <section class="featured-destinations">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">MOST POPULAR</span>
+                <h2>Featured Trekking Destinations</h2>
+                <p>Our top-rated trekking destinations that offer unforgettable experiences</p>
+            </div>
+
+            <div class="featured-grid">
+                <div class="featured-card large" data-region="everest" data-difficulty="challenging" data-duration="medium" data-season="spring,autumn">
+                    <div class="card-image">
+                        <img src="everest base camp.jpg" alt="Everest Base Camp Trek">
+                        <div class="card-badge">Most Popular</div>
+                        <div class="card-overlay">
+                            <div class="card-content">
+                                <h3>Everest Base Camp Trek</h3>
+                                <p>The ultimate trekking adventure to the base of the world's highest mountain</p>
+                                <div class="card-meta">
+                                    <span><i class="fas fa-map-marker-alt"></i> Everest Region</span>
+                                    <span><i class="fas fa-calendar"></i> 14 days</span>
+                                    <span><i class="fas fa-mountain"></i> 5,364m</span>
+                                </div>
+                                <div class="card-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span>4.9 (127 reviews)</span>
+                                </div>
+                                <a href="everest.html" class="btn primary-btn">Explore Trek</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="featured-card" data-region="annapurna" data-difficulty="moderate" data-duration="long" data-season="spring,autumn">
+                    <div class="card-image">
+                        <img src="Annapurna Circuit.jpg" alt="Annapurna Circuit Trek">
+                        <div class="card-overlay">
+                            <div class="card-content">
+                                <h3>Annapurna Circuit</h3>
+                                <p>Classic trek with diverse landscapes and cultures</p>
+                                <div class="card-meta">
+                                    <span><i class="fas fa-calendar"></i> 16 days</span>
+                                    <span><i class="fas fa-mountain"></i> 5,416m</span>
+                                </div>
+                                <div class="card-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span>4.8 (89 reviews)</span>
+                                </div>
+                                <a href="annapurna.html" class="btn primary-btn">Explore Trek</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="featured-card" data-region="langtang" data-difficulty="moderate" data-duration="short" data-season="spring,autumn,winter">
+                    <div class="card-image">
+                        <img src="Langtang Valley.jpg" alt="Langtang Valley Trek">
+                        <div class="card-overlay">
+                            <div class="card-content">
+                                <h3>Langtang Valley</h3>
+                                <p>Beautiful valley trek with Tamang culture</p>
+                                <div class="card-meta">
+                                    <span><i class="fas fa-calendar"></i> 7 days</span>
+                                    <span><i class="fas fa-mountain"></i> 4,984m</span>
+                                </div>
+                                <div class="card-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span>4.7 (64 reviews)</span>
+                                </div>
+                                <a href="langtang.html" class="btn primary-btn">Explore Trek</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Destinations -->
+    <section class="all-destinations">
+        <div class="container">
+            <div class="section-header">
+                <h2>All Trekking Destinations</h2>
+                <p>Explore our complete collection of trekking routes across Nepal</p>
+            </div>
+
+            <div class="destinations-grid" id="destinations-grid">
+                <!-- Everest Region -->
+                <div class="destination-card" data-region="everest" data-difficulty="challenging" data-duration="medium" data-season="spring,autumn">
+                    <div class="card-image">
+                        <img src="https://source.unsplash.com/400x300/?everest,gokyo" alt="Gokyo Lakes Trek">
+                        <div class="difficulty-badge challenging">Challenging</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3>Gokyo Lakes Trek</h3>
+                            <div class="price">$1,299</div>
+                        </div>
+                        <p>Stunning turquoise lakes and views of Everest from Gokyo Ri</p>
+                        <div class="trek-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Everest Region</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>12 days</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-mountain"></i>
+                                <span>5,357m</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-thermometer-half"></i>
+                                <span>Spring, Autumn</span>
+                            </div>
+                        </div>
+                        <div class="card-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.8 (45 reviews)</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#" class="btn outline-btn">View Details</a>
+                            <a href="#" class="btn primary-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="destination-card" data-region="everest" data-difficulty="extreme" data-duration="long" data-season="spring,autumn">
+                    <div class="card-image">
+                        <img src="https://source.unsplash.com/400x300/?everest,three,passes" alt="Three Passes Trek">
+                        <div class="difficulty-badge extreme">Extreme</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3>Three Passes Trek</h3>
+                            <div class="price">$1,899</div>
+                        </div>
+                        <p>Ultimate Everest region adventure crossing three high passes</p>
+                        <div class="trek-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Everest Region</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>19 days</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-mountain"></i>
+                                <span>5,545m</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-thermometer-half"></i>
+                                <span>Spring, Autumn</span>
+                            </div>
+                        </div>
+                        <div class="card-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.9 (23 reviews)</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#" class="btn outline-btn">View Details</a>
+                            <a href="#" class="btn primary-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Annapurna Region -->
+                <div class="destination-card" data-region="annapurna" data-difficulty="moderate" data-duration="short" data-season="spring,autumn,winter">
+                    <div class="card-image">
+                        <img src="https://source.unsplash.com/400x300/?annapurna,base,camp" alt="Annapurna Base Camp">
+                        <div class="difficulty-badge moderate">Moderate</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3>Annapurna Base Camp</h3>
+                            <div class="price">$799</div>
+                        </div>
+                        <p>Journey to the heart of the Annapurna Sanctuary</p>
+                        <div class="trek-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Annapurna Region</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>10 days</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-mountain"></i>
+                                <span>4,130m</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-thermometer-half"></i>
+                                <span>Spring, Autumn, Winter</span>
+                            </div>
+                        </div>
+                        <div class="card-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.7 (78 reviews)</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#" class="btn outline-btn">View Details</a>
+                            <a href="#" class="btn primary-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="destination-card" data-region="annapurna" data-difficulty="easy" data-duration="short" data-season="spring,autumn,winter">
+                    <div class="card-image">
+                        <img src="https://source.unsplash.com/400x300/?poon,hill,rhododendron" alt="Poon Hill Trek">
+                        <div class="difficulty-badge easy">Easy</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3>Poon Hill Trek</h3>
+                            <div class="price">$399</div>
+                        </div>
+                        <p>Perfect introduction to Himalayan trekking with stunning sunrise views</p>
+                        <div class="trek-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Annapurna Region</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>5 days</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-mountain"></i>
+                                <span>3,210m</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-thermometer-half"></i>
+                                <span>Spring, Autumn, Winter</span>
+                            </div>
+                        </div>
+                        <div class="card-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.6 (156 reviews)</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#" class="btn outline-btn">View Details</a>
+                            <a href="#" class="btn primary-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Manaslu Region -->
+                <div class="destination-card" data-region="manaslu" data-difficulty="challenging" data-duration="long" data-season="spring,autumn">
+                    <div class="card-image">
+                        <img src="https://source.unsplash.com/400x300/?manaslu,circuit" alt="Manaslu Circuit Trek">
+                        <div class="difficulty-badge challenging">Challenging</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3>Manaslu Circuit Trek</h3>
+                            <div class="price">$1,499</div>
+                        </div>
+                        <p>Remote and pristine trek around the eighth highest mountain</p>
+                        <div class="trek-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Manaslu Region</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>16 days</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-mountain"></i>
+                                <span>5,106m</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-thermometer-half"></i>
+                                <span>Spring, Autumn</span>
+                            </div>
+                        </div>
+                        <div class="card-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.8 (34 reviews)</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#" class="btn outline-btn">View Details</a>
+                            <a href="#" class="btn primary-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Langtang Region -->
+                <div class="destination-card" data-region="langtang" data-difficulty="moderate" data-duration="short" data-season="spring,autumn,winter">
+                    <div class="card-image">
+                        <img src="https://source.unsplash.com/400x300/?langtang,gosaikunda" alt="Langtang Gosaikunda Trek">
+                        <div class="difficulty-badge moderate">Moderate</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3>Langtang Gosaikunda</h3>
+                            <div class="price">$899</div>
+                        </div>
+                        <p>Sacred lakes and beautiful valley views combined trek</p>
+                        <div class="trek-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Langtang Region</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>12 days</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-mountain"></i>
+                                <span>4,380m</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-thermometer-half"></i>
+                                <span>Spring, Autumn, Winter</span>
+                            </div>
+                        </div>
+                        <div class="card-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.7 (52 reviews)</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#" class="btn outline-btn">View Details</a>
+                            <a href="#" class="btn primary-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mustang Region -->
+                <div class="destination-card" data-region="mustang" data-difficulty="moderate" data-duration="medium" data-season="spring,autumn,monsoon">
+                    <div class="card-image">
+                        <img src="https://source.unsplash.com/400x300/?upper,mustang,lo,manthang" alt="Upper Mustang Trek">
+                        <div class="difficulty-badge moderate">Moderate</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3>Upper Mustang Trek</h3>
+                            <div class="price">$1,699</div>
+                        </div>
+                        <p>Forbidden kingdom with Tibetan culture and desert landscapes</p>
+                        <div class="trek-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Mustang Region</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>14 days</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-mountain"></i>
+                                <span>3,840m</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-thermometer-half"></i>
+                                <span>Spring, Autumn, Monsoon</span>
+                            </div>
+                        </div>
+                        <div class="card-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>4.9 (28 reviews)</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#" class="btn outline-btn">View Details</a>
+                            <a href="#" class="btn primary-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dolpo Region -->
+                <div class="destination-card" data-region="dolpo" data-difficulty="extreme" data-duration="extended" data-season="spring,autumn">
+                    <div class="card-image">
+                        <img src="https://source.unsplash.com/400x300/?dolpo,phoksundo,lake" alt="Dolpo Trek">
+                        <div class="difficulty-badge extreme">Extreme</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3>Upper Dolpo Trek</h3>
+                            <div class="price">$2,499</div>
+                        </div>
+                        <p>Remote wilderness trek to the crystal lake and ancient monasteries</p>
+                        <div class="trek-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Dolpo Region</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>23 days</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-mountain"></i>
+                                <span>5,115m</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-thermometer-half"></i>
+                                <span>Spring, Autumn</span>
+                            </div>
+                        </div>
+                        <div class="card-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span>5.0 (12 reviews)</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#" class="btn outline-btn">View Details</a>
+                            <a href="#" class="btn primary-btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More destinations can be added here -->
+            </div>
+
+            <div class="load-more-container">
+                <button class="btn outline-btn load-more-btn">Load More Destinations</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trekking Information -->
+    <section class="trekking-info">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Best Trekking Seasons</h3>
+                    <p><strong>Spring (March-May):</strong> Clear mountain views, rhododendrons in bloom, moderate temperatures.</p>
+                    <p><strong>Autumn (September-November):</strong> Crystal clear skies, stable weather, perfect visibility.</p>
+                    <p><strong>Winter (December-February):</strong> Lower altitude treks, fewer crowds, crisp air.</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3>Difficulty Levels</h3>
+                    <p><strong>Easy:</strong> 3-6 hours daily, well-marked trails, basic fitness required.</p>
+                    <p><strong>Moderate:</strong> 5-7 hours daily, some steep sections, good fitness needed.</p>
+                    <p><strong>Challenging:</strong> 6-8 hours daily, high altitude, excellent fitness required.</p>
+                    <p><strong>Extreme:</strong> 8+ hours daily, technical sections, expert level fitness.</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-backpack"></i>
+                    </div>
+                    <h3>What's Included</h3>
+                    <p>• Professional English-speaking guide</p>
+                    <p>• All necessary permits and fees</p>
+                    <p>• Accommodation in tea houses/lodges</p>
+                    <p>• Three meals a day during trek</p>
+                    <p>• Airport transfers and transportation</p>
+                    <p>• First aid kit and emergency support</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Safety & Support</h3>
+                    <p>• Experienced guides with wilderness first aid training</p>
+                    <p>• Satellite communication for emergencies</p>
+                    <p>• Comprehensive travel insurance coverage</p>
+                    <p>• 24/7 support team in Kathmandu</p>
+                    <p>• Helicopter evacuation insurance included</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready for Your Next Adventure?</h2>
+                <p>Let our experienced team help you plan the perfect trekking experience in Nepal. From beginner-friendly trails to challenging high-altitude adventures, we have something for every trekker.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn primary-btn">Plan My Trek</a>
+                    <a href="tel:+9779813092717" class="btn secondary-btn">Call Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="logo.JPG" alt="Hikemandu Logo" class="footer-logo-img">
+                </div>
+                <div class="footer-nav">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="trekking-destinations.html">Trekking Destinations</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i>Suryabinayak, Bhaktapur, Nepal</p>
+                    <p><i class="fas fa-phone"></i> +977 9813092717</p>
+                    <p><i class="fas fa-envelope"></i> pratikshiwakoti105@gmail.com</p>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Subscribe to Our Newsletter</h4>
+                    <p>Get updates on new treks and special offers</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; <span id="year"></span> Hikemandu. All rights reserved.
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+            <div class="footer-credit">
+                <p>Designed By Pratik Shiwakoti</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+    <script src="search.js" defer></script>
+    <script src="all_trek.js" defer></script>
+</body>
+</html>
