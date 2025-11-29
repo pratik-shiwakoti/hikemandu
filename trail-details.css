@@ -1,0 +1,856 @@
+/* Trail Details Specific Styles */
+
+/* Hero Section */
+.trail-hero {
+    height: 60vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("https://source.unsplash.com/random/1920x1080/?mountains,hiking,shivapuri") no-repeat center center / cover;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    color: var(--white);
+    padding-top: 80px;
+    padding-bottom: 3rem;
+  }
+  
+  .trail-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  .trail-hero-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
+  
+  .trail-breadcrumbs {
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+  }
+  
+  .trail-breadcrumbs a {
+    color: rgba(255, 255, 255, 0.8);
+    transition: var(--transition);
+  }
+  
+  .trail-breadcrumbs a:hover {
+    color: var(--white);
+  }
+  
+  .trail-hero h1 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+  
+  .trail-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  
+  .trail-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+  }
+  
+  .trail-meta i {
+    color: var(--primary-light);
+  }
+  
+  /* Trail Overview Section */
+  .trail-overview {
+    padding: 5rem 0;
+    background-color: var(--white);
+  }
+  
+  .trail-overview-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+  }
+  
+  .trail-overview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .trail-overview-header h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--secondary-color);
+    position: relative;
+  }
+  
+  .trail-overview-header h2::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+  }
+  
+  .trail-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .stars {
+    color: #ffd700;
+  }
+  
+  .trail-overview-content p {
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+  
+  .trail-highlights {
+    margin-top: 2.5rem;
+    background-color: var(--light-bg);
+    padding: 2rem;
+    border-radius: var(--radius);
+  }
+  
+  .trail-highlights h3 {
+    font-family: var(--font-heading);
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+    font-size: 1.25rem;
+  }
+  
+  .trail-highlights ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  
+  .trail-highlights li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .trail-highlights i {
+    color: var(--primary-color);
+  }
+  
+  .trail-overview-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .trail-info-card {
+    background-color: var(--light-bg);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+  }
+  
+  .trail-info-card h3 {
+    font-family: var(--font-heading);
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+    font-size: 1.25rem;
+    text-align: center;
+  }
+  
+  .trail-info-card ul {
+    margin-bottom: 2rem;
+  }
+  
+  .trail-info-card li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .trail-info-card li:last-child {
+    border-bottom: none;
+  }
+  
+  .info-label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-color);
+    font-weight: 500;
+  }
+  
+  .info-label i {
+    color: var(--primary-color);
+    width: 20px;
+    text-align: center;
+  }
+  
+  .info-value {
+    color: var(--text-light);
+  }
+  
+  .book-trail-btn {
+    width: 100%;
+  }
+  
+  .weather-card {
+    background-color: var(--light-bg);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+  }
+  
+  .weather-card h3 {
+    font-family: var(--font-heading);
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+    font-size: 1.25rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .weather-card i {
+    color: var(--primary-color);
+  }
+  
+  .weather-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-light);
+  }
+  
+  .weather-loading i {
+    font-size: 2rem;
+    color: var(--primary-color);
+  }
+  
+  .weather-info {
+    text-align: center;
+  }
+  
+  .weather-temp {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  
+  .weather-desc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .weather-desc i {
+    font-size: 1.5rem;
+  }
+  
+  .weather-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .weather-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .weather-detail-label {
+    font-size: 0.75rem;
+    color: var(--text-light);
+  }
+  
+  .weather-detail-value {
+    font-weight: 600;
+  }
+  
+  /* Trail Map Section */
+  .trail-map-section {
+    padding: 5rem 0;
+    background-color: var(--light-bg);
+  }
+  
+  .trail-map-container {
+    height: 500px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    position: relative;
+  }
+  
+  #trail-map {
+    height: 100%;
+    width: 100%;
+  }
+  
+  #elevation-chart {
+    margin-top: 20px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  
+  /* Trail Details Section */
+  .trail-details {
+    padding: 5rem 0;
+  }
+  
+  .trail-details-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 3rem;
+  }
+  
+  .trail-description h2 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    color: var(--secondary-color);
+    position: relative;
+  }
+  
+  .trail-description h2::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+  }
+  
+  .trail-stage {
+    margin-bottom: 2.5rem;
+    position: relative;
+  }
+  
+  .trail-stage h3 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+  }
+  
+  .stage-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 50%;
+    margin-right: 1rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+  }
+  
+  .trail-stage p {
+    color: var(--text-light);
+    line-height: 1.7;
+    padding-left: 3.5rem;
+  }
+  
+  .trail-stage::after {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 15px;
+    width: 2px;
+    height: calc(100% - 40px);
+    background-color: var(--border-color);
+    z-index: -1;
+  }
+  
+  .trail-stage:last-child::after {
+    display: none;
+  }
+  
+  .trail-tips {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .tips-card {
+    background-color: var(--light-bg);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+  }
+  
+  .tips-card h3 {
+    font-family: var(--font-heading);
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .tips-card h3 i {
+    color: var(--primary-color);
+  }
+  
+  .tips-card ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .tips-card li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    color: var(--text-light);
+  }
+  
+  .tips-card li i {
+    color: var(--primary-color);
+    margin-top: 0.25rem;
+  }
+  
+  .what-to-bring {
+    background-color: var(--light-bg);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+  }
+  
+  .what-to-bring h3 {
+    font-family: var(--font-heading);
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    justify-content: center;
+  }
+  
+  .what-to-bring h3 i {
+    color: var(--primary-color);
+  }
+  
+  .bring-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .bring-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  
+  .bring-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    background-color: rgba(5, 150, 105, 0.1);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  
+  .bring-item span {
+    font-size: 0.875rem;
+    color: var(--text-light);
+  }
+  
+  /* Trail Gallery */
+  .trail-gallery {
+    padding: 5rem 0;
+    background-color: var(--light-bg);
+  }
+  
+  .trail-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  /* Trail Reviews */
+  .trail-reviews {
+    padding: 5rem 0;
+  }
+  
+  .reviews-summary {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    background-color: var(--light-bg);
+    border-radius: var(--radius);
+    padding: 2rem;
+  }
+  
+  .overall-rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-right: 3rem;
+    border-right: 1px solid var(--border-color);
+  }
+  
+  .rating-number {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    line-height: 1;
+  }
+  
+  .rating-stars {
+    color: #ffd700;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
+  
+  .rating-count {
+    color: var(--text-light);
+    font-size: 0.875rem;
+  }
+  
+  .rating-breakdown {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+  
+  .rating-bar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .rating-label {
+    width: 60px;
+    font-size: 0.875rem;
+    color: var(--text-light);
+  }
+  
+  .progress-bar {
+    flex-grow: 1;
+    height: 8px;
+    background-color: var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .progress {
+    height: 100%;
+    background-color: var(--primary-color);
+  }
+  
+  .rating-percent {
+    width: 40px;
+    font-size: 0.875rem;
+    color: var(--text-light);
+    text-align: right;
+  }
+  
+  .reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .review-card {
+    background-color: var(--white);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+  }
+  
+  .review-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+  
+  .reviewer-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .reviewer-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .reviewer-details h4 {
+    font-size: 1.125rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.25rem;
+  }
+  
+  .review-date {
+    font-size: 0.875rem;
+    color: var(--text-light);
+  }
+  
+  .review-rating {
+    color: #ffd700;
+  }
+  
+  .review-content p {
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+  
+  .load-more-container {
+    text-align: center;
+    margin-top: 3rem;
+  }
+  
+  .review-form-container {
+    background-color: var(--light-bg);
+    border-radius: var(--radius);
+    padding: 2rem;
+    margin-top: 3rem;
+    box-shadow: var(--shadow);
+  }
+  
+  .review-form-container h3 {
+    font-family: var(--font-heading);
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+    font-size: 1.25rem;
+    text-align: center;
+  }
+  
+  .review-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .form-group label {
+    font-weight: 500;
+    color: var(--text-color);
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="date"],
+  .form-group textarea {
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-group input[type="text"]:focus,
+  .form-group input[type="email"]:focus,
+  .form-group input[type="date"]:focus,
+  .form-group textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+  }
+  
+  .form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+  
+  .star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+  
+  .star-rating input {
+    display: none;
+  }
+  
+  .star-rating label {
+    cursor: pointer;
+    color: var(--border-color);
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+  }
+  
+  .star-rating label:hover,
+  .star-rating label:hover ~ label,
+  .star-rating input:checked ~ label {
+    color: #ffd700;
+  }
+  
+  .star-rating label.active {
+    color: #ffd700;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .review-submit-btn {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+  }
+  
+  .review-success-message {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: var(--primary-color);
+    padding: 1rem;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    transition: opacity 0.5s ease;
+  }
+  
+  .review-success-message i {
+    font-size: 1.5rem;
+  }
+  
+  .new-review {
+    animation: highlightReview 2s ease;
+  }
+  
+  @keyframes highlightReview {
+    0% {
+      background-color: rgba(40, 167, 69, 0.1);
+    }
+    100% {
+      background-color: var(--white);
+    }
+  }
+  
+  /* Weather Card Enhancements */
+  .weather-update-time {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-top: 1rem;
+  }
+  
+  /* Related Trails */
+  .related-trails {
+    padding: 5rem 0;
+    background-color: var(--light-bg);
+  }
+  
+  .related-trails-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 992px) {
+    .trail-overview-grid,
+    .trail-details-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .trail-highlights ul {
+      grid-template-columns: 1fr;
+    }
+  
+    .reviews-summary {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  
+    .overall-rating {
+      padding-right: 0;
+      padding-bottom: 2rem;
+      border-right: none;
+      border-bottom: 1px solid var(--border-color);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .trail-hero h1 {
+      font-size: 2.5rem;
+    }
+  
+    .trail-meta {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+  
+    .trail-meta span {
+      width: fit-content;
+    }
+  
+    .bring-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .review-header {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .star-rating {
+      justify-content: center;
+    }
+  
+    .review-success-message {
+      flex-direction: column;
+      text-align: center;
+      padding: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .trail-stage p {
+      padding-left: 0;
+    }
+  
+    .trail-stage::after {
+      display: none;
+    }
+  }
+  
